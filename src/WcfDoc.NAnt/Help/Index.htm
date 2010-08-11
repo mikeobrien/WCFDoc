@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META http-equiv="Content-Language" content="en-ca">
+    
+    <LINK rel="stylesheet" type="text/css" href="style.css">
+    <TITLE>&lt;wcf-doc&gt; Task</TITLE>
+  </HEAD><BODY>
+    <TABLE width="100&percnt;" border="0" cellspacing="0" cellpadding="2" class="NavBar">
+      <TBODY><TR>
+        <TD class="NavBar-Cell">
+          Task Reference
+          <IMG alt="-&gt;" src="arrow.gif"> &lt;wcf-doc&gt;</TD>
+        <TD class="NavBar-Cell" align="right">
+                        v1.0</TD>
+      </TR>
+    </TBODY></TABLE>
+    <H1>&lt;wcf-doc&gt;</H1>
+    <P> Wcf Doc is a tool that documents SOAP and RESTful WCF services. </P>
+    <H3>Parameters</H3>
+	<DIV class="table">
+		<TABLE>
+			<TBODY>
+				<TR>
+					<TH>Attribute</TH>
+					<TH style="text-align: center;">Type</TH>
+					<TH>Description</TH><TH style="text-align: center;">Required</TH>
+				</TR>
+				<TR>
+					<TD valign="top" class="required">assemblies</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to the assemblies containg the WCF Service and Data Contract(s).</TD>
+					<TD style="text-align: center;">True</TD>
+				</TR>
+				<TR>
+					<TD valign="top" class="required">output</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path of the output file.</TD>
+					<TD style="text-align: center;">True</TD>
+				</TR>
+				<TR>
+					<TD valign="top">stylesheet</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the xml stylesheet.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">mergeFiles</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to xml files to be merged with the xml documentation prior to transformation. These can be explict or wildcard paths (IE: [Path]\\*.xml).</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">websitePath</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the root of a service website.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">config</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the service web/app.config containing service configuration.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">xmlComments</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to the xml comments files to include. These can be explict or wildcard paths (IE: [Path]\\*.xml).</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				
+				<TR>
+				  <TD valign="top">failonerror</TD>
+				  <TD style="text-align: center;">bool</TD>
+				  <TD> Determines if task failure stops the build, or is just reported. The default is <B>true</B>. </TD>
+				  <TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+				  <TD valign="top">if</TD>
+				  <TD style="text-align: center;">bool</TD>
+				  <TD> If <B>true</B> then the task will be executed; otherwise, skipped. The default is <B>true</B>. </TD>
+				  <TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+				  <TD valign="top">timeout</TD>
+				  <TD style="text-align: center;">int</TD>
+				  <TD> The maximum amount of time the application is allowed to execute, expressed in milliseconds. Defaults to no time-out. </TD>
+				  <TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+				  <TD valign="top">unless</TD>
+				  <TD style="text-align: center;">bool</TD>
+				  <TD> Opposite of <CODE>if</CODE>. If <B>false</B> then the task will be executed; otherwise, skipped. The default is <B>false</B>. </TD>
+				  <TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+				  <TD valign="top">verbose</TD>
+				  <TD style="text-align: center;">bool</TD>
+				  <TD> Determines whether the task should report detailed build log messages. The default is <B>false</B>. </TD>
+				  <TD style="text-align: center;">False</TD>
+				</TR>
+
+			</TBODY>
+		</TABLE>
+	</DIV>
+	
+    
+    <H3>Examples</H3>
+    <UL class="examples">
+      <LI>
+        <P> Document web services. </P>
+        <PRE class="code">&lt;wcf-doc 
+        assemblies = "D:\Temp\Contracts.dll|D:\Temp\Services.dll|D:\Temp\Restful.dll" 
+        output = "D:\Temp\Documentation.html"
+        stylesheet = "D:\Temp\Documentation.xsl"
+        mergeFiles = "D:\Temp\MergeFiles\*.xml|D:\Temp\Summary.xml"
+        websitePath = "D:\Temp\WebRoot"
+        config = "D:\Temp\WebRoot\Web.config"
+        xmlComments = "D:\Temp\Restful.XML|D:\Temp\Contracts.XML|D:\Temp\Services.XML" /&gt;
+    </PRE>
+      </LI>
+    </UL>
+    <H3>Requirements</H3>
+    <DIV style="margin-left: 20px;">
+      <B>Assembly:</B> WcfDoc.Engine (1.0.0.0)
+            </DIV>
+  
+</BODY></HTML>

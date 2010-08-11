@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='Windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+
+  <Product
+    Name='Wcf Doc'
+    UpgradeCode='747FFACC-D3B4-49C1-AFDC-AC2ADC112247'
+    Id='43575647-5239-411F-8A92-A82176C1D632'
+    Language='1033'
+    Manufacturer='Ultraviolet Catastrophe'
+    Version='1.0'>
+
+    <Package Keywords='Installer'
+			  Description="Wcf Doc Installer"
+			  Comments='Wcf Doc' Manufacturer='Ultraviolet Catastrophe'
+			  InstallerVersion='150' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Property Id="ALLUSERS">1</Property>
+
+    <Property Id="NET_FRAMEWORK_INSTALLED">
+      <RegistrySearch Id='b759b8c2d5' Type='raw'
+			  Root='HKLM' Key='SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5' Name='Install' />
+    </Property>
+
+    <Condition Message=".NET Framework 3.5 is not installed. Please install it and try again.">
+      Installed OR (NET_FRAMEWORK_INSTALLED = "#1" AND NOT Installed)
+    </Condition>
+
+    <Media Id='1' Cabinet='WcfDoc.cab' EmbedCab='yes' />
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="Wcf Doc" />
+      </Directory>
+
+      <Directory Id='ProgramFilesFolder' Name='Program Files'>
+
+        <Directory Id ='INSTALLDIR' Name='Wcf Doc'>
+
+          <Directory Id='NANTTASKSINSTALLDIR' Name='NAnt Tasks'>
+
+            <Component Id='WcfDocNAntTasks' Guid='9763ACC1-0CB2-4302-AFD9-6E2DD2EACBD9'>
+              <File
+                Id='cc77dd79c4'
+                Name='WcfDoc.NAnt.dll'
+                DiskId='1'
+                Source='..\WcfDoc.NAnt\bin\Release\WcfDoc.NAnt.dll'
+                Vital='yes'/>
+              <File
+                Id='a0a5656a94'
+                Name='WcfDoc.Engine.dll'
+                DiskId='1'
+                Source='..\WcfDoc.Engine\bin\Release\WcfDoc.Engine.dll'
+                Vital='yes'/>
+            </Component>
+
+          </Directory>
+
+          <Directory Id ='NANTTASKSHELPDIR' Name='NAnt Tasks Documentation'>
+            <Component Id='NAntTasksHelpDocs' Guid='0E608617-E2C6-44EB-B47E-087A5D349B33'>
+              <File Id='c41e71005d' Name='Index.htm' DiskId='1' Source='..\WcfDoc.NAnt\Help\Index.htm' Vital='yes'>
+                <Shortcut Id="b8dff4d62b" Directory="ProgramMenuDir" Name="NAnt Task Documentation" WorkingDirectory='INSTALLDIR'  />
+              </File>
+
+              <File Id='d2578211f5' Name='arrow.gif' DiskId='1' Source='..\WcfDoc.NAnt\Help\arrow.gif' Vital='yes'/>
+              <File Id="d40ca51586" Name="style.css" DiskId="1" Source="..\WcfDoc.NAnt\Help\style.css" Vital="yes" />
+            </Component>
+          </Directory>
+
+          <Directory Id='MSBUILDTASKSINSTALLDIR' Name='MS Build Tasks'>
+            <Component Id='WcfDocMSBuildTasks' Guid='B9B13E77-E57C-4169-8888-DF2CB2AA9A61'>
+              <File
+                Id='b2905ab55b'
+                Name='WcfDoc.MSBuild.dll'
+                DiskId='1'
+                Source='..\WcfDoc.MSBuild\bin\Release\WcfDoc.MSBuild.dll'
+                Vital='yes'/>
+              <File
+                Id='d99569946e'
+                Name='WcfDoc.Engine.dll'
+                DiskId='1'
+                Source='..\WcfDoc.Engine\bin\Release\WcfDoc.Engine.dll'
+                Vital='yes'/>
+            </Component>
+          </Directory>
+
+          <Directory Id ='MSBUILDTASKSHELPDIR' Name='MS Build Tasks Documentation'>
+            <Component Id='MSBuildTasksHelpDocs' Guid='DA7E791D-05F3-44CB-969F-AA2B27B0DCB7'>
+              <File Id='da50703098' Name='Index.htm' DiskId='1' Source='..\WcfDoc.MSBuild\Help\Index.htm' Vital='yes'>
+                <Shortcut Id="c2eaf1aef2" Directory="ProgramMenuDir" Name="MS Build Task Documentation" WorkingDirectory='INSTALLDIR'  />
+              </File>
+
+              <File Id='e3956de395' Name='arrow.gif' DiskId='1' Source='..\WcfDoc.MSBuild\Help\arrow.gif' Vital='yes'/>
+              <File Id="c99589eed9" Name="style.css" DiskId="1" Source="..\WcfDoc.MSBuild\Help\style.css" Vital="yes" />
+            </Component>
+          </Directory>
+
+          <Component Id='WcfDocUtil' Guid='2C413EBA-F5CB-4A12-82DD-1FA0F07E7BC7'>
+            <File
+              Id='e065300c9e'
+              Name='WcfDoc.exe'
+              DiskId='1'
+              Source='..\WcfDoc\bin\Release\WcfDoc.exe'
+              Vital='yes'/>
+            <File
+              Id='d2c251fcca'
+              Name='WcfDoc.Engine.dll'
+              DiskId='1'
+              Source='..\WcfDoc.Engine\bin\Release\WcfDoc.Engine.dll'
+              Vital='yes'/>
+          </Component>
+
+          <Directory Id ='CMDLINEHELPDIR' Name='Command Line Utility Documentation'>
+            <Component Id='CmdLineHelpDocs' Guid='39CD344A-38A6-4309-B6BE-597804A737C0'>
+              <File Id='b8011180f6' Name='Index.htm' DiskId='1' Source='..\WcfDoc\Help\Index.htm' Vital='yes'>
+                <Shortcut Id="d53b3b172b" Directory="ProgramMenuDir" Name="Command Line Utility Documentation" WorkingDirectory='INSTALLDIR'  />
+              </File>
+
+              <File Id='cfb1e5cc1b' Name='arrow.gif' DiskId='1' Source='..\WcfDoc\Help\arrow.gif' Vital='yes'/>
+              <File Id="a4c99a4930" Name="style.css" DiskId="1" Source="..\WcfDoc\Help\style.css" Vital="yes" />
+            </Component>
+          </Directory>
+
+        </Directory>
+
+      </Directory>
+    </Directory>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+    <UIRef Id="WixUI_FeatureTree" />
+
+    <Icon Id="InstallerIcon" SourceFile="Resources\Installer.ico" />
+    <Property Id="ARPPRODUCTICON" Value="InstallerIcon" />
+
+    <Feature
+        Id='e3473e482c'
+        Level='1'
+        Title='Command Line Utility'
+        Description='Installs the Wcf Doc Command Line Utility'
+        ConfigurableDirectory='INSTALLDIR'>
+      <ComponentRef Id='WcfDocUtil'/>
+    </Feature>
+
+    <Feature
+        Id='d27842959c'
+        Level='1'
+        Title='MS Build Task'
+        Description='Installs the Wcf Doc MS Build Task.'
+        ConfigurableDirectory='MSBUILDTASKSINSTALLDIR'>
+      <ComponentRef Id='WcfDocMSBuildTasks'/>
+    </Feature>
+
+    <Feature
+        Id='d12435c34e'
+        Level='1'
+        Title='NAnt Task'
+        Description='Installs the Wcf Doc NAnt Task. NOTE: You must set the install path for the tasks to be the NAnt tasks folder (IE: &quot;&lt;nant&gt;\bin\tasks&quot;).'
+        ConfigurableDirectory='NANTTASKSINSTALLDIR'>
+      <ComponentRef Id='WcfDocNAntTasks'/>
+    </Feature>
+
+    <Feature
+        Id='bfc8fb95a9'
+        Level='1'
+        Title='Documentation'
+        Description='Installs the Wcf Doc documentation'
+        ConfigurableDirectory='INSTALLDIR'>
+      <ComponentRef Id='MSBuildTasksHelpDocs'/>
+      <ComponentRef Id='NAntTasksHelpDocs'/>
+      <ComponentRef Id='CmdLineHelpDocs'/>
+    </Feature>
+
+  </Product>
+</Wix>

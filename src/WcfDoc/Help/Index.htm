@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META http-equiv="Content-Language" content="en-ca">
+    
+    <LINK rel="stylesheet" type="text/css" href="style.css">
+    <TITLE>WcfDoc.exe</TITLE>
+  </HEAD><BODY>
+    <TABLE width="100&percnt;" border="0" cellspacing="0" cellpadding="2" class="NavBar">
+      <TBODY><TR>
+        <TD class="NavBar-Cell">
+          Command Line Utility Reference
+          <IMG alt="-&gt;" src="arrow.gif"> WcfDoc.exe</TD>
+        <TD class="NavBar-Cell" align="right">
+                        v1.0</TD>
+      </TR>
+    </TBODY></TABLE>
+    <H1>WcfDoc.exe</H1>
+     <P> Wcf Doc is a tool that documents SOAP and RESTful WCF services. </P>
+    <H3>Parameters</H3>
+    <DIV class="table">
+        <TABLE>
+            <TBODY>
+                <TR>
+                    <TH>Switch</TH>
+                    <TH style="text-align: center;">Type</TH>
+                    <TH>Description</TH><TH style="text-align: center;">Required</TH>
+                </TR>
+				<TR>
+					<TD valign="top" class="required">/Assemblies</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to the assemblies containg the WCF Service and Data Contract(s).</TD>
+					<TD style="text-align: center;">True</TD>
+				</TR>
+				<TR>
+					<TD valign="top" class="required">/Output</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path of the output file.</TD>
+					<TD style="text-align: center;">True</TD>
+				</TR>
+				<TR>
+					<TD valign="top">/Stylesheet</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the xml stylesheet.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">/MergeFiles</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to xml files to be merged with the xml documentation prior to transformation. These can be explict or wildcard paths (IE: [Path]\\*.xml).</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">/WebsitePath</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the root of a service website.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">/Config</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Path to the service web/app.config containing service configuration.</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+				<TR>
+					<TD valign="top">/XmlComments</TD>
+					<TD style="text-align: center;">string</TD>
+					<TD>Pipe seperated paths to the xml comments files to include. These can be explict or wildcard paths (IE: [Path]\\*.xml).</TD>
+					<TD style="text-align: center;">False</TD>
+				</TR>
+            </TBODY>
+        </TABLE>
+    </DIV>
+    
+    
+    <H3>Examples</H3>
+    <UL class="examples">
+      <LI>
+        <P> Document web services. </P>
+        <PRE class="code">
+        WcfDoc.exe /Assemblies = "D:\Temp\Contracts.dll|D:\Temp\Services.dll|D:\Temp\Restful.dll"
+                   /Output = "D:\Temp\Documentation.html"
+                   /Stylesheet = "D:\Temp\Documentation.xsl"
+                   /MergeFiles = "D:\Temp\MergeFiles\*.xml|D:\Temp\Summary.xml"
+                   /WebsitePath = "D:\Temp\WebRoot"
+                   /Config = "D:\Temp\WebRoot\Web.config"
+                   /XmlComments = "D:\Temp\Restful.XML|D:\Temp\Contracts.XML|D:\Temp\Services.XML"
+    </PRE>
+      </LI>
+    </UL>
+    <H3>Requirements</H3>
+    <DIV style="margin-left: 20px;">
+      <B>Assembly:</B> WcfDoc.Engine (1.0.0.0)
+            </DIV>
+  
+</BODY></HTML>
