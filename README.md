@@ -1,0 +1,4 @@
+WCF Doc
+=============
+
+Wcf Doc is a set of tools that enables you to document both SOAPy and RESTFul WCF web services. It includes a command line utility, MS Build task and a NAnt task. Wcf Doc builds documentation by drawing on a number of sources (Some optional) such as the assemblies containing the service and data contracts and their xml comment files, the web/app.config, and the service website. It includes properties of service and data contract attributes as well as RESTful attributes. You can also merge other pertinent xml files into the output. Wcf Doc can also apply an xml stylesheet to transform the output into another format such as HTML. 
