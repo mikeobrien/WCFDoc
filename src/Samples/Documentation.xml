@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <types>
+    <type id="7f1eb95126ebeea76970beae752f4990" name="char" namespace="http://schemas.microsoft.com/2003/10/Serialization/" class="Primitive" fullName="" assembly="" relatedName="" relatedTypeId="d018ecfce8b7789249e914bc7fae326c" relatedType="int" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="e25ad53567e976a0b66da3cd27243f01" name="duration" namespace="http://schemas.microsoft.com/2003/10/Serialization/" class="Primitive" fullName="" assembly="" relatedName="" relatedTypeId="0bf8c5088aee52fb7ff28ef0c30cf54d" relatedType="duration" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="048172586dcbc1c1f19fce573ef425c4" name="guid" namespace="http://schemas.microsoft.com/2003/10/Serialization/" class="Primitive" fullName="" assembly="" relatedName="" relatedTypeId="4387470779f73283f7c68df81753a48b" relatedType="string" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="ead606f687db9760e3149ad4ee3464f1" name="Colors_Enumeration_Data_Contract_With_CustomNames" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD" class="Enumeration" fullName="WcfDoc.TestSuite.TypesD.ColorsEnumerationDataContractWithCustomNames" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="4387470779f73283f7c68df81753a48b" relatedType="string" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <comments>
+        <summary>
+            A nice data contract enum with a custom name
+            </summary>
+      </comments>
+      <options>
+        <option value="R_e_d">
+          <comments>
+            Red buttons do bad things
+            </comments>
+        </option>
+        <option value="G_r_e_e_n">
+          <comments>
+            Green sea monsters are troubling
+            </comments>
+        </option>
+        <option value="Blue">
+          <comments>
+            Blue dragons are even more troubling
+            </comments>
+        </option>
+      </options>
+      <members />
+    </type>
+    <type id="c47aec471314eda2ec51a80a09fce2ce" name="ColorsEnumerationDataContract" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD" class="Enumeration" fullName="WcfDoc.TestSuite.TypesD.ColorsEnumerationDataContract" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="4387470779f73283f7c68df81753a48b" relatedType="string" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <comments>
+        <summary>
+            A nice data contract enum of colors.
+            </summary>
+      </comments>
+      <options>
+        <option value="Red">
+          <comments>
+            Angry people turn red
+            </comments>
+        </option>
+        <option value="Green">
+          <comments>
+            Its not easy being green
+            </comments>
+        </option>
+        <option value="Blue">
+          <comments>
+            Its not easy being blue either
+            </comments>
+        </option>
+      </options>
+      <members />
+    </type>
+    <type id="73e78a34e5d61d051c129db429cde281" name="ColorsEnumeration" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD" class="Enumeration" fullName="WcfDoc.TestSuite.TypesD.ColorsEnumeration" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="4387470779f73283f7c68df81753a48b" relatedType="string" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <comments>
+        <summary>
+            A nice plain old enum
+            </summary>
+      </comments>
+      <options>
+        <option value="Red">
+          <comments>
+            Is Robert Redford red?
+            </comments>
+        </option>
+        <option value="Green">
+          <comments>
+            Is Alan Greenspan green?
+            </comments>
+        </option>
+        <option value="Blue">
+          <comments>
+            Are Blue Dog democrats blue? 
+            </comments>
+        </option>
+      </options>
+      <members />
+    </type>
+    <type id="8aaca691f11cb3878928c555b7e731fe" name="ArrayOfint" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" class="Collection" fullName="" assembly="" relatedName="int" relatedTypeId="d018ecfce8b7789249e914bc7fae326c" relatedType="int" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="e731dd43ecd427564f4cf69c9ad823d6" name="ArrayOfstring" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" class="Collection" fullName="" assembly="" relatedName="string" relatedTypeId="4387470779f73283f7c68df81753a48b" relatedType="string" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="493ec6fbb0edabe4a9f506440ccdc272" name="ArrayOfdateTime" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" class="Collection" fullName="" assembly="" relatedName="dateTime" relatedTypeId="8496f2b74d4a9ae65964198d0df0fd53" relatedType="dateTime" relatedTypeNamespace="http://www.w3.org/2001/XMLSchema">
+      <options />
+      <members />
+    </type>
+    <type id="00d45a4c5db17e293f2e993a2b65c9fa" name="SerializableType" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" class="Complex" fullName="WcfDoc.TestSuite.TypesC.SerializableType" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <comments>
+        <summary>
+            This is a serializable type.
+            </summary>
+      </comments>
+      <options />
+      <members>
+        <member name="_arrayPropertyField" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="_genericPropertyField" type="GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns" typeId="25bc6a9441381d239e23849dc3f8edb0" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB" />
+        <member name="_listPropertyField" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="_pocoPropertyField" type="POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" />
+        <member name="_propertyField" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="_serializablePropertyField" type="SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" />
+        <member name="field" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+      </members>
+    </type>
+    <type id="1d5339aa8bc42d946a611f7e049f6257" name="POCOType" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" class="Complex" fullName="WcfDoc.TestSuite.TypesC.POCOType" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <comments>
+        <summary>
+            This is a nice POCO type.
+            </summary>
+      </comments>
+      <options />
+      <members>
+        <member name="ArrayProperty" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="ColorsDataContractCustomNameEnumProperty" type="Colors_Enumeration_Data_Contract_With_CustomNames" typeId="ead606f687db9760e3149ad4ee3464f1" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            A nice property that returns an enum.
+            </comments>
+        </member>
+        <member name="ColorsDataContractEnumProperty" type="ColorsEnumerationDataContract" typeId="c47aec471314eda2ec51a80a09fce2ce" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            A nice property that returns an enum.
+            </comments>
+        </member>
+        <member name="ColorsEnumProperty" type="ColorsEnumeration" typeId="73e78a34e5d61d051c129db429cde281" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            A nice property that returns an enum.
+            </comments>
+        </member>
+        <member name="DataContractProperty" type="DataContractType" typeId="2bbcac45da88d04faea033c81a3d0d51" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA">
+          <comments>
+            A nice property that returns a data contract.
+            </comments>
+        </member>
+        <member name="GenericProperty" type="GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns" typeId="25bc6a9441381d239e23849dc3f8edb0" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB">
+          <comments>
+            This is a nice generic type property.
+            </comments>
+        </member>
+        <member name="ListProperty" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="Property" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="SerializableProperty" type="SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC">
+          <comments>
+            This is a nice property that returns a serializable type.
+            </comments>
+        </member>
+        <member name="field" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+      </members>
+    </type>
+    <type id="25bc6a9441381d239e23849dc3f8edb0" name="GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB" class="Complex" fullName="WcfDoc.TestSuite.TypesB.GenericDataContractType`3[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[WcfDoc.TestSuite.TypesA.DataContractType, WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <comments>
+        <summary>
+            This is a generic data contract.
+            </summary>
+        <typeparam name="A">This is a generic type parameter.</typeparam>
+        <typeparam name="B">This is another generic type parameter.</typeparam>
+        <typeparam name="C">And yet another type parameter.</typeparam>
+      </comments>
+      <options />
+      <members>
+        <member name="PropertyA" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="PropertyB" type="int" typeId="d018ecfce8b7789249e914bc7fae326c" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="PropertyC" type="DataContractType" typeId="2bbcac45da88d04faea033c81a3d0d51" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA">
+          <comments>
+            This is a nice property.
+            </comments>
+        </member>
+      </members>
+    </type>
+    <type id="147f25d07c5a5642fc8f20a22dcd888d" name="GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB" class="Complex" fullName="WcfDoc.TestSuite.TypesB.GenericDataContractType`3[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <comments>
+        <summary>
+            This is a generic data contract.
+            </summary>
+        <typeparam name="A">This is a generic type parameter.</typeparam>
+        <typeparam name="B">This is another generic type parameter.</typeparam>
+        <typeparam name="C">And yet another type parameter.</typeparam>
+      </comments>
+      <options />
+      <members>
+        <member name="PropertyA" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="PropertyB" type="int" typeId="d018ecfce8b7789249e914bc7fae326c" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="PropertyC" type="ArrayOfdateTime" typeId="493ec6fbb0edabe4a9f506440ccdc272" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      </members>
+    </type>
+    <type id="2bbcac45da88d04faea033c81a3d0d51" name="DataContractType" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA" class="Complex" fullName="WcfDoc.TestSuite.TypesA.DataContractType" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <comments>
+        <summary>
+            This is a data contract type.
+            </summary>
+      </comments>
+      <options />
+      <members>
+        <member name="ArrayProperty" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="ColorsDataContractCustomNameEnumProperty" type="Colors_Enumeration_Data_Contract_With_CustomNames" typeId="ead606f687db9760e3149ad4ee3464f1" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            This is a data contract enum property with a custom name.
+            </comments>
+        </member>
+        <member name="ColorsDataContractEnumProperty" type="ColorsEnumerationDataContract" typeId="c47aec471314eda2ec51a80a09fce2ce" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            This is data contract enum property.
+            </comments>
+        </member>
+        <member name="ColorsEnumProperty" type="ColorsEnumeration" typeId="73e78a34e5d61d051c129db429cde281" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD">
+          <comments>
+            This is an enum property.
+            </comments>
+        </member>
+        <member name="GenericProperty" type="GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns" typeId="25bc6a9441381d239e23849dc3f8edb0" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB">
+          <comments>
+            This is a generic type property.
+            </comments>
+        </member>
+        <member name="ListProperty" type="ArrayOfstring" typeId="e731dd43ecd427564f4cf69c9ad823d6" typeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <member name="POCOProperty" type="POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC">
+          <comments>
+            This is a poco property.
+            </comments>
+        </member>
+        <member name="Property" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="Property_With_A_Custom_Name" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="SerializableProperty" type="SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" typeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC">
+          <comments>
+            This is a serializable property.
+            </comments>
+        </member>
+        <member name="field" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="field_With_A_Custom_Name" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+      </members>
+    </type>
+    <type id="c61b4d57693a9a85da19ba0fb0ca3acc" name="ArrayOfDataContractType" namespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA" class="Collection" fullName="" assembly="" relatedName="DataContractType" relatedTypeId="2bbcac45da88d04faea033c81a3d0d51" relatedType="DataContractType" relatedTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA">
+      <options />
+      <members />
+    </type>
+    <type id="b00a2ce0d5c1b5f006e8b136865a9705" name="ArrayOfData_Contract_Type_With_Name_And_Namespace" namespace="urn:UltravioletCatastrophe" class="Collection" fullName="WcfDoc.TestSuite.TypesA.DataContractTypeWithNameAndNamespace[]" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="Data_Contract_Type_With_Name_And_Namespace" relatedTypeId="f95bd6f8ad0cb2359dc7c5135e1d2176" relatedType="Data_Contract_Type_With_Name_And_Namespace" relatedTypeNamespace="urn:UltravioletCatastrophe">
+      <options />
+      <members />
+    </type>
+    <type id="f95bd6f8ad0cb2359dc7c5135e1d2176" name="Data_Contract_Type_With_Name_And_Namespace" namespace="urn:UltravioletCatastrophe" class="Complex" fullName="WcfDoc.TestSuite.TypesA.DataContractTypeWithNameAndNamespace" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" relatedName="" relatedTypeId="6b92bb2c65a19276df9388e936ccd25c" relatedType="" relatedTypeNamespace="">
+      <options />
+      <members>
+        <member name="Property" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+        <member name="field" type="string" typeId="4387470779f73283f7c68df81753a48b" typeNamespace="http://www.w3.org/2001/XMLSchema" />
+      </members>
+    </type>
+  </types>
+  <serviceContracts>
+    <serviceContract id="2046bf346d1907f437b94ed3d8bcdd4a" type="WcfDoc.TestSuite.ServiceContracts.ServiceContractClass" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" callbackContract="" configurationName="" hasProtectionLevel="false" name="ServiceContractClass" namespace="http://tempuri.org/" protectionLevel="None" sessionMode="Allowed" restful="false">
+      <comments>
+        <summary>
+            This is a service contract class. You can pass a <paramref name="parameter" /> when you call <c>MethodWithNoResult(parameter, listParameter, serializableParameter)</c>. To learn more about this see <see cref="a406141310957cf85ed2d7edcab1abf2">here</see>.
+            </summary>
+        <remarks>
+          <para>Ut ullamcorper euismod enim ut ullamcorper.</para>
+          <para>Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.</para>
+          <list type="bullet">
+            <listheader>
+              <term>SomeTerm</term>
+              <description>This is some term</description>
+            </listheader>
+            <item>
+              <term>Item #1</term>
+              <description>First item</description>
+            </item>
+            <item>
+              <term>Item #2</term>
+              <description>Second item</description>
+            </item>
+          </list>
+        </remarks>
+        <value>This is some info about a value.</value>
+        <param name="parameter">This is a parameter.</param>
+        <param name="listParameter">This is a generic list parameter.</param>
+        <param name="serializableParameter">This is a serializable parameter.</param>
+        <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+        <seealso cref="3ec648da12da775965f331c7a4475cc3">Check this one out too.</seealso>
+        <seealso cref="3ec648da12da775965f331c7a4475cc3">And this.</seealso>
+        <exception cref="T:System.Exception">Bad things are happening.</exception>
+      </comments>
+      <operations>
+        <operation id="ea43c81fce8dc7ed4d0079e8a722b088" methodName="MethodWithNoResultOrParameters" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithNoResultOrParameters" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with no parameters or return value.
+            </summary>
+          </comments>
+          <parameters />
+          <return />
+        </operation>
+        <operation id="55dc6d9b7133f1e303f76c00e57ce71b" methodName="MethodWithNoResult" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method_With_No_Result" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with not return value. You can pass a <paramref name="parameter" /> when you call <c>MethodWithNoResult(parameter, listParameter, serializableParameter)</c>. To learn more about this see <see cref="a406141310957cf85ed2d7edcab1abf2" /></summary>
+            <remarks>
+              <para>Ut ullamcorper euismod enim ut ullamcorper.</para> Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.
+            <list type="number"><item><term>Item #1</term><description>First item</description></item><item><term>Item #2</term><description>Second item</description></item></list></remarks>
+            <value>This is some info about a value.</value>
+            <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+            <seealso cref="3ec648da12da775965f331c7a4475cc3">Check this one out too.</seealso>
+            <exception cref="T:System.Exception">Bad things are happening.</exception>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return />
+        </operation>
+        <operation id="3ec648da12da775965f331c7a4475cc3" methodName="Method" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="4387470779f73283f7c68df81753a48b" type="System.String" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+            <comments>This returns a string</comments>
+          </return>
+        </operation>
+        <operation id="626b839be192ed8f8e248adf8c86fb83" methodName="MethodWithGenericReturn" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithGenericReturn" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is another method that returns a generic object.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="pocoParameter" type="WcfDoc.TestSuite.TypesC.POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" direction="Out" xmlType="POCOType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a POCO parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="147f25d07c5a5642fc8f20a22dcd888d" type="WcfDoc.TestSuite.TypesB.GenericDataContractType`3[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlType="GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB">
+            <comments>A generic type.</comments>
+          </return>
+        </operation>
+      </operations>
+    </serviceContract>
+    <serviceContract id="a406141310957cf85ed2d7edcab1abf2" type="WcfDoc.TestSuite.ServiceContracts.IServiceContractInterface" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" callbackContract="" configurationName="" hasProtectionLevel="false" name="IServiceContractInterface" namespace="http://tempuri.org/" protectionLevel="None" sessionMode="Allowed" restful="false">
+      <comments>
+        <summary>
+            This is a service contract interface. You can pass a <paramref name="parameter" /> when you call <c>MethodWithNoResult(parameter, listParameter, serializableParameter)</c>. To learn more about this see <see cref="a406141310957cf85ed2d7edcab1abf2" /></summary>
+        <remarks>
+          <para>Ut ullamcorper euismod enim ut ullamcorper.</para> Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.
+            <list type="number"><item>First item</item><item>Second item</item></list></remarks>
+        <value>This is some info about a value.</value>
+        <param name="parameter">This is a parameter.</param>
+        <param name="listParameter">This is a generic list parameter.</param>
+        <param name="serializableParameter">This is a serializable parameter.</param>
+        <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+        <seealso cref="56beeb6f80e0ee2113b5e941fdc991b8">Check this one out too.</seealso>
+        <exception cref="T:System.Exception">Bad things are happening.</exception>
+      </comments>
+      <operations>
+        <operation id="a48e334079f3b326c438dd092a806576" methodName="MethodWithNoResultOrParameters" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method_With_No_Result_Or_Parameters" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with no parameters or return value.
+            </summary>
+          </comments>
+          <parameters />
+          <return />
+        </operation>
+        <operation id="5cd511d8ea55adbe688763c0e30c6ff5" methodName="MethodWithNoResult" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithNoResult" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with not return value.
+            </summary>
+            <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return />
+        </operation>
+        <operation id="56beeb6f80e0ee2113b5e941fdc991b8" methodName="Method" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="4387470779f73283f7c68df81753a48b" type="System.String" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+            <comments>This returns a string</comments>
+          </return>
+        </operation>
+        <operation id="1af5a2531efa38b8fbe3d83e6f3015c3" methodName="MethodWithGenericReturn" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithGenericReturn" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is another method that returns a generic object.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="pocoParameter" type="WcfDoc.TestSuite.TypesC.POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" direction="Out" xmlType="POCOType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a POCO parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="147f25d07c5a5642fc8f20a22dcd888d" type="WcfDoc.TestSuite.TypesB.GenericDataContractType`3[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlType="GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB">
+            <comments>A generic type.</comments>
+          </return>
+        </operation>
+      </operations>
+    </serviceContract>
+    <serviceContract id="dfb091d24e1a8a6657ca9a9ca1c5e2b3" type="WcfDoc.TestSuite.ServiceContracts.IServiceContractInterfaceWithCustomNameAndNamespace" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" callbackContract="" configurationName="" hasProtectionLevel="false" name="Service_Contract_Interface_With_Custom_Name_And_Namespace" namespace="urn:UltravioletCatastrophe" protectionLevel="None" sessionMode="Allowed" restful="false">
+      <comments>
+        <summary>
+            This is a service contract interface with a custom name.
+            </summary>
+      </comments>
+      <operations>
+        <operation id="941ea2e48b080589e06686add8db28ad" methodName="MethodWithNoResultOrParameters" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithNoResultOrParameters" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with no parameters or return value.
+            </summary>
+          </comments>
+          <parameters />
+          <return />
+        </operation>
+        <operation id="9f6933106d89e0d4de98546a66c94c78" methodName="MethodWithNoResult" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithNoResult" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method with not return value.
+            </summary>
+            <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return />
+        </operation>
+        <operation id="0e62ab0ba21435bec4728e7acf667eca" methodName="Method" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is a method.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="4387470779f73283f7c68df81753a48b" type="System.String" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+            <comments>This returns a string</comments>
+          </return>
+        </operation>
+        <operation id="40bd30a12046b88555940494ca523574" methodName="MethodWithGenericReturn" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method_With_Generic_Return" protectionLevel="None" replyAction="" restful="false" restMethod="" restUriTemplate="" restBodyStyle="" restIsBodyStyleSetExplicitly="" restIsRequestFormatSetExplicitly="" restIsResponseFormatSetExplicitly="" restRequestFormat="" restResponseFormat="">
+          <comments>
+            <summary>
+            This is another method that returns a generic object.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="pocoParameter" type="WcfDoc.TestSuite.TypesC.POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" direction="Out" xmlType="POCOType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="">
+              <comments>This is a POCO parameter.</comments>
+            </parameter>
+            <parameter name="dataContractParameter" type="WcfDoc.TestSuite.TypesA.DataContractType" typeId="2bbcac45da88d04faea033c81a3d0d51" direction="Out" xmlType="DataContractType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA" restfulType="">
+              <comments />
+            </parameter>
+          </parameters>
+          <return typeId="147f25d07c5a5642fc8f20a22dcd888d" type="WcfDoc.TestSuite.TypesB.GenericDataContractType`3[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlType="GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB">
+            <comments>A generic type.</comments>
+          </return>
+        </operation>
+      </operations>
+    </serviceContract>
+    <serviceContract id="c0ec44b9098c053e821968ce2a1736a0" type="WcfDoc.TestSuite.ServiceContracts.IRestfulServiceContractInterface" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" callbackContract="" configurationName="" hasProtectionLevel="false" name="IRestfulServiceContractInterface" namespace="http://tempuri.org/" protectionLevel="None" sessionMode="Allowed" restful="true">
+      <comments>
+        <summary>
+            This is a restful service contract interface.
+            </summary>
+      </comments>
+      <operations>
+        <operation id="7af8afa65dc5a83ce4f72809413fda16" methodName="MethodWithNoResultOrParameters" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method_With_No_Result_Or_Parameters" protectionLevel="None" replyAction="" restful="true" restMethod="GET" restUriTemplate="/widgets" restBodyStyle="Bare" restIsBodyStyleSetExplicitly="True" restIsRequestFormatSetExplicitly="True" restIsResponseFormatSetExplicitly="True" restRequestFormat="Xml" restResponseFormat="Xml">
+          <comments>
+            <summary>
+            This is a restful method with no parameters or return value.
+            </summary>
+          </comments>
+          <parameters />
+          <return />
+        </operation>
+        <operation id="058966b1c3b2568b6291c14a23eef215" methodName="MethodWithNoResult" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithNoResult" protectionLevel="None" replyAction="" restful="true" restMethod="PUT" restUriTemplate="/widgets" restBodyStyle="Bare" restIsBodyStyleSetExplicitly="False" restIsRequestFormatSetExplicitly="False" restIsResponseFormatSetExplicitly="False" restRequestFormat="Xml" restResponseFormat="Xml">
+          <comments>
+            <summary>
+            This is a restful method with not return value.
+            </summary>
+            <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="EntityBody">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" typeId="8aaca691f11cb3878928c555b7e731fe" direction="Out" xmlType="ArrayOfint" xmlTypeNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" restfulType="EntityBody">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="EntityBody">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return />
+        </operation>
+        <operation id="c6050f1edb1ee6648e9d7cf0a520d36e" methodName="Method" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="Method" protectionLevel="None" replyAction="" restful="true" restMethod="POST" restUriTemplate="/widgets" restBodyStyle="Bare" restIsBodyStyleSetExplicitly="False" restIsRequestFormatSetExplicitly="False" restIsResponseFormatSetExplicitly="False" restRequestFormat="Xml" restResponseFormat="Xml">
+          <comments>
+            <summary>
+            This is a restful method.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="parameter" type="System.String" typeId="4387470779f73283f7c68df81753a48b" direction="Out" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema" restfulType="EntityBody">
+              <comments>This is a parameter.</comments>
+            </parameter>
+            <parameter name="listParameter" type="System.Collections.Generic.List`1[[WcfDoc.TestSuite.TypesA.DataContractType, WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" typeId="c61b4d57693a9a85da19ba0fb0ca3acc" direction="Out" xmlType="ArrayOfDataContractType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA" restfulType="EntityBody">
+              <comments>This is a generic list parameter.</comments>
+            </parameter>
+            <parameter name="serializableParameter" type="WcfDoc.TestSuite.TypesC.SerializableType" typeId="00d45a4c5db17e293f2e993a2b65c9fa" direction="Out" xmlType="SerializableType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="EntityBody">
+              <comments>This is a serializable parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="4387470779f73283f7c68df81753a48b" type="System.String" xmlType="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+            <comments>This returns a string</comments>
+          </return>
+        </operation>
+        <operation id="87b3f11c80c64e2807dd86dac11808d2" methodName="MethodWithGenericReturn" action="" asyncPattern="false" hasProtectionLevel="false" isInitiating="true" isOneWay="true" isTerminating="false" name="MethodWithGenericReturn" protectionLevel="None" replyAction="" restful="true" restMethod="DELETE" restUriTemplate="/widgets" restBodyStyle="Bare" restIsBodyStyleSetExplicitly="False" restIsRequestFormatSetExplicitly="False" restIsResponseFormatSetExplicitly="False" restRequestFormat="Xml" restResponseFormat="Xml">
+          <comments>
+            <summary>
+            This is another restful method that returns a generic object.
+            </summary>
+          </comments>
+          <parameters>
+            <parameter name="pocoParameter" type="WcfDoc.TestSuite.TypesC.POCOType" typeId="1d5339aa8bc42d946a611f7e049f6257" direction="Out" xmlType="POCOType" xmlTypeNamespace="http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC" restfulType="EntityBody">
+              <comments>This is a POCO parameter.</comments>
+            </parameter>
+          </parameters>
+          <return typeId="b00a2ce0d5c1b5f006e8b136865a9705" type="WcfDoc.TestSuite.TypesA.DataContractTypeWithNameAndNamespace[]" xmlType="ArrayOfData_Contract_Type_With_Name_And_Namespace" xmlTypeNamespace="urn:UltravioletCatastrophe">
+            <comments>A generic type.</comments>
+          </return>
+        </operation>
+      </operations>
+    </serviceContract>
+  </serviceContracts>
+  <services>
+    <service id="a385522b48c7dafa14fa37dd2365ed28" type="WcfDoc.TestSuite.ServiceContracts.ServiceContractClass" assembly="WcfDoc.TestSuite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <comments>
+        <summary>
+            This is a service contract class. You can pass a <paramref name="parameter" /> when you call <c>MethodWithNoResult(parameter, listParameter, serializableParameter)</c>. To learn more about this see <see cref="T:WcfDoc.TestSuite.ServiceContracts.IServiceContractInterface">here</see>.
+            </summary>
+        <remarks>
+          <para>Ut ullamcorper euismod enim ut ullamcorper.</para>
+          <para>Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.</para>
+          <list type="bullet">
+            <listheader>
+              <term>SomeTerm</term>
+              <description>This is some term</description>
+            </listheader>
+            <item>
+              <term>Item #1</term>
+              <description>First item</description>
+            </item>
+            <item>
+              <term>Item #2</term>
+              <description>Second item</description>
+            </item>
+          </list>
+        </remarks>
+        <value>This is some info about a value.</value>
+        <param name="parameter">This is a parameter.</param>
+        <param name="listParameter">This is a generic list parameter.</param>
+        <param name="serializableParameter">This is a serializable parameter.</param>
+        <example>
+            Here is how you use this:
+            <code>MethodWithNoResult(...)</code></example>
+        <seealso cref="M:WcfDoc.TestSuite.ServiceContracts.ServiceContractClass.Method(System.String,System.Collections.Generic.List{System.Int32},WcfDoc.TestSuite.TypesC.SerializableType)">Check this one out too.</seealso>
+        <seealso cref="M:WcfDoc.TestSuite.ServiceContracts.ServiceContractClass.Method(System.String,System.Collections.Generic.List{System.Int32},WcfDoc.TestSuite.TypesC.SerializableType)">And this.</seealso>
+        <exception cref="T:System.Exception">Bad things are happening.</exception>
+      </comments>
+      <website>
+        <path>/Widgets/Widget.svc</path>
+      </website>
+      <endpoints>
+        <endpoint binding="basicHttpBinding" name="EndpointA" contract="WcfDoc.TestSuite.ServiceContracts.ServiceContractClass" />
+      </endpoints>
+      <contracts>
+        <contract>WcfDoc.TestSuite.ServiceContracts.ServiceContractClass</contract>
+      </contracts>
+    </service>
+  </services>
+  <configuration>
+    <services>
+      <service name="WcfDoc.TestSuite.ServiceContracts.ServiceContractClass">
+        <endpoint binding="basicHttpBinding" name="EndpointA" contract="WcfDoc.TestSuite.ServiceContracts.ServiceContractClass" />
+      </service>
+    </services>
+  </configuration>
+  <metadata>
+    <license><![CDATA[Copyright (c) 2009 Ultraviolet Catastrophe
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.]]></license>
+    <summary>This is a summary page for our web services.</summary>
+  </metadata>
+</doc>

@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+  <head>
+    <Title>Web Service API</Title>
+    <style>
+			body {
+				font-family: Verdana, Arial;
+				font-size: 8.5pt;	
+			}
+			h2 {
+				font-family: Verdana, Arial;
+				font-size: 18pt;
+			}
+			h3 {
+				font-family: Verdana, Arial;
+				font-size: 16pt;
+			}
+			h4 {
+				font-family: Verdana, Arial;
+				font-size: 12pt;
+			}
+			h5 {
+				font-family: Verdana, Arial;
+				font-size: 8.5pt;
+			}
+			table {
+				border-style: solid;
+				border-top-width: 1px;
+				border-left-width: 1px;
+				border-bottom-width: 0px;
+				border-right-width: 0px;
+				border-color: #CCCCCC;
+				border-collapse: collapse;
+			}
+			th {
+				font-family: Verdana, Arial;
+				font-size: 8.5pt;	
+				background: #CCCCCC;
+				border-style: solid;
+				border-top-width: 0px;
+				border-left-width: 0px;
+				border-bottom-width: 1px;
+				border-right-width: 1px;
+				border-color: #CCCCCC;
+			}
+			td {
+				font-family: Verdana, Arial;
+				font-size: 8.5pt;	
+				border-style: solid;
+				border-top-width: 0px;
+				border-left-width: 0px;
+				border-bottom-width: 1px;
+				border-right-width: 1px;
+				border-color: #CCCCCC;
+			}
+			hr {
+				margin-top: 3;
+				margin-bottom: 3;
+				display: block;
+			}
+			.SmallMargin {
+				margin-top: 3;
+				margin-bottom: 3;
+			}
+			</style>
+  </head>
+  <body topmargin="40" leftmargin="40" rightmargin="40" bottommargin="40">
+    <h2>Web Service API</h2>
+    <h4>SOAP Services</h4>
+    <table cellspacing="0" cellpadding="5" width="100%">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="#2046bf346d1907f437b94ed3d8bcdd4a">ServiceContractClass</a>
+        </td>
+        <td width="100%">
+          <p>
+            This is a service contract class. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#2bbcac45da88d04faea033c81a3d0d51">here</a>.
+            </p>
+        </td>
+      </tr>
+    </table>
+    <h4>RESTful Services</h4>
+    <table cellspacing="0" cellpadding="5" width="100%">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="#5875e6d7ba7e0b1812acd052c14eff73">IRESTfulServiceContractInterface</a>
+        </td>
+        <td width="100%">
+          <p>
+            This is a service contract interface. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#!:IServiceContractInterface"></a></p>
+        </td>
+      </tr>
+    </table>
+    <h4>Types</h4>
+    <table cellspacing="0" cellpadding="5" width="100%">
+      <tr>
+        <th>Name</th>
+        <th>Namespace</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="#c61b4d57693a9a85da19ba0fb0ca3acc">ArrayOfDataContractType</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA</td>
+        <td width="100%" />
+      </tr>
+      <tr>
+        <td>
+          <a href="#2bbcac45da88d04faea033c81a3d0d51">DataContractType</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesA</td>
+        <td width="100%">
+          <p>
+            This is a data contract type.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#147f25d07c5a5642fc8f20a22dcd888d">GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB</td>
+        <td width="100%">
+          <p>
+            This is a generic data contract.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#25bc6a9441381d239e23849dc3f8edb0">GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesB</td>
+        <td width="100%">
+          <p>
+            This is a generic data contract.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#1d5339aa8bc42d946a611f7e049f6257">POCOType</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC</td>
+        <td width="100%">
+          <p>
+            This is a nice POCO type.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesC</td>
+        <td width="100%">
+          <p>
+            This is a serializable type.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#ead606f687db9760e3149ad4ee3464f1">Colors_Enumeration_Data_Contract_With_CustomNames</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD</td>
+        <td width="100%">
+          <p>
+            A nice data contract enum with a custom name
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#73e78a34e5d61d051c129db429cde281">ColorsEnumeration</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD</td>
+        <td width="100%">
+          <p>
+            A nice plain old enum
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#c47aec471314eda2ec51a80a09fce2ce">ColorsEnumerationDataContract</a>
+        </td>
+        <td>http://schemas.datacontract.org/2004/07/WcfDoc.TestSuite.TypesD</td>
+        <td width="100%">
+          <p>
+            A nice data contract enum of colors.
+            </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#493ec6fbb0edabe4a9f506440ccdc272">ArrayOfdateTime</a>
+        </td>
+        <td>http://schemas.microsoft.com/2003/10/Serialization/Arrays</td>
+        <td width="100%" />
+      </tr>
+      <tr>
+        <td>
+          <a href="#8aaca691f11cb3878928c555b7e731fe">ArrayOfint</a>
+        </td>
+        <td>http://schemas.microsoft.com/2003/10/Serialization/Arrays</td>
+        <td width="100%" />
+      </tr>
+      <tr>
+        <td>
+          <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+        </td>
+        <td>http://schemas.microsoft.com/2003/10/Serialization/Arrays</td>
+        <td width="100%" />
+      </tr>
+      <tr>
+        <td>
+          <a href="#b00a2ce0d5c1b5f006e8b136865a9705">ArrayOfData_Contract_Type_With_Name_And_Namespace</a>
+        </td>
+        <td>urn:UltravioletCatastrophe</td>
+        <td width="100%" />
+      </tr>
+      <tr>
+        <td>
+          <a href="#f95bd6f8ad0cb2359dc7c5135e1d2176">Data_Contract_Type_With_Name_And_Namespace</a>
+        </td>
+        <td>urn:UltravioletCatastrophe</td>
+        <td width="100%" />
+      </tr>
+    </table>
+    <br />
+    <hr />
+    <h3 class="SmallMargin">SOAP Services</h3>
+    <hr />
+    <div>
+      <a id="2046bf346d1907f437b94ed3d8bcdd4a">
+        <h4>ServiceContractClass</h4>
+      </a>
+      <h5>/Widgets/Widget.svc</h5>
+      <p>
+            This is a service contract class. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#2bbcac45da88d04faea033c81a3d0d51">here</a>.
+            </p>
+      <h5>Operations</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">
+            <a href="#3ec648da12da775965f331c7a4475cc3">Method</a>(parameter, <a href="#8aaca691f11cb3878928c555b7e731fe">listParameter</a>, <a href="#00d45a4c5db17e293f2e993a2b65c9fa">serializableParameter</a>)</td>
+          <td width="100%">
+            <p>
+            This is a method.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">
+            <a href="#626b839be192ed8f8e248adf8c86fb83">MethodWithGenericReturn</a>(<a href="#1d5339aa8bc42d946a611f7e049f6257">pocoParameter</a>)</td>
+          <td width="100%">
+            <p>
+            This is another method that returns a generic object.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">
+            <a href="#55dc6d9b7133f1e303f76c00e57ce71b">MethodWithNoResult</a>(parameter, <a href="#8aaca691f11cb3878928c555b7e731fe">listParameter</a>, <a href="#00d45a4c5db17e293f2e993a2b65c9fa">serializableParameter</a>)</td>
+          <td width="100%">
+            <p>
+            This is a method with not return value. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#!:IServiceContractInterface"></a></p>
+          </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">
+            <a href="#ea43c81fce8dc7ed4d0079e8a722b088">MethodWithNoResultOrParameters</a>()</td>
+          <td width="100%">
+            <p>
+            This is a method with no parameters or return value.
+            </p>
+          </td>
+        </tr>
+      </table>
+      <h5>Remarks</h5>
+      <p>
+        <P>Ut ullamcorper euismod enim ut ullamcorper.</P>
+        <P>Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.</P>
+        <UL>
+          <LI>
+            <strong>SomeTerm: </strong>This is some term</LI>
+          <LI>
+            <strong>Item #1: </strong>First item</LI>
+          <LI>
+            <strong>Item #2: </strong>Second item</LI>
+        </UL>
+      </p>
+      <p>This is some info about a value.</p>
+      <h5>Example</h5>
+      <p>
+            Here is how you use this:
+            <PRE style="background-color:#DDDDDD;padding:5px">MethodWithNoResult(...)</PRE></p>
+      <h5>Faults</h5>
+      <ul>
+        <LI>Bad things are happening.</LI>
+      </ul>
+      <h5>See Also</h5>
+      <span style="padding-left: 20px">
+        <a href="#3ec648da12da775965f331c7a4475cc3">Check this one out too.</a>, <a href="#2bbcac45da88d04faea033c81a3d0d51">And this.</a></span>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div>
+      <h4>
+        <a id="3ec648da12da775965f331c7a4475cc3">ServiceContractClass\Method</a>(parameter, <a href="#8aaca691f11cb3878928c555b7e731fe">listParameter</a>, <a href="#00d45a4c5db17e293f2e993a2b65c9fa">serializableParameter</a>)
+			</h4>
+      <h5>/Widgets/Widget.svc</h5>
+      <p>
+            This is a method.
+            </p>
+      <h5>Parameters</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>parameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>listParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#8aaca691f11cb3878928c555b7e731fe">ArrayOfint</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>serializableParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Return</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+				Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+        </tr>
+      </table>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h4>
+        <a id="626b839be192ed8f8e248adf8c86fb83">ServiceContractClass\MethodWithGenericReturn</a>(<a href="#1d5339aa8bc42d946a611f7e049f6257">pocoParameter</a>)
+			</h4>
+      <h5>/Widgets/Widget.svc</h5>
+      <p>
+            This is another method that returns a generic object.
+            </p>
+      <h5>Parameters</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>pocoParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#1d5339aa8bc42d946a611f7e049f6257">POCOType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Return</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+				Type: <a href="#147f25d07c5a5642fc8f20a22dcd888d">GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+        </tr>
+      </table>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h4>
+        <a id="55dc6d9b7133f1e303f76c00e57ce71b">ServiceContractClass\Method_With_No_Result</a>(parameter, <a href="#8aaca691f11cb3878928c555b7e731fe">listParameter</a>, <a href="#00d45a4c5db17e293f2e993a2b65c9fa">serializableParameter</a>)
+			</h4>
+      <h5>/Widgets/Widget.svc</h5>
+      <p>
+            This is a method with not return value. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#!:IServiceContractInterface"></a></p>
+      <h5>Parameters</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>parameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>listParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#8aaca691f11cb3878928c555b7e731fe">ArrayOfint</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>serializableParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Remarks</h5>
+      <p>
+        <P>Ut ullamcorper euismod enim ut ullamcorper.</P> Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.
+            <OL><LI><strong>Item #1: </strong>First item</LI><LI><strong>Item #2: </strong>Second item</LI></OL></p>
+      <p>This is some info about a value.</p>
+      <h5>Example</h5>
+      <p>
+            Here is how you use this:
+            <PRE style="background-color:#DDDDDD;padding:5px">MethodWithNoResult(...)</PRE></p>
+      <h5>Faults</h5>
+      <ul>
+        <LI>Bad things are happening.</LI>
+      </ul>
+      <h5>See Also</h5>
+      <span style="padding-left: 20px">
+        <a href="#3ec648da12da775965f331c7a4475cc3">Check this one out too.</a>
+      </span>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h4>
+        <a id="ea43c81fce8dc7ed4d0079e8a722b088">ServiceContractClass\MethodWithNoResultOrParameters</a>()
+			</h4>
+      <h5>/Widgets/Widget.svc</h5>
+      <p>
+            This is a method with no parameters or return value.
+            </p>
+    </div>
+    <br />
+    <hr />
+    <h3 class="SmallMargin">RESTful Services</h3>
+    <hr />
+    <div>
+      <h4>
+        <a id="5875e6d7ba7e0b1812acd052c14eff73">IRESTfulServiceContractInterface</a>
+      </h4>
+      <p>
+            This is a service contract interface. You can pass a <span style="font-family:Courier New;font-size:9pt;color:#006600">parameter</span> when you call <span style="font-family:Courier New;font-size:9pt;color:#006600">MethodWithNoResult(parameter, listParameter, serializableParameter)</span>. To learn more about this see <a href="#!:IServiceContractInterface"></a></p>
+      <h5>Resources</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th>Name</th>
+          <th>Uri</th>
+          <th>Method</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="#a42fc1ed38065cf025906386f9c8f1b1">MethodWithNoResultOrParameters</a>
+          </td>
+          <td nowrap="nowrap">/</td>
+          <td>DELETE</td>
+          <td width="100%">
+            <p>
+            This is a method with no parameters or return value.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#78dc08f121f5949ec9749eb669286a71">MethodWithNoResult</a>
+          </td>
+          <td nowrap="nowrap">/</td>
+          <td>POST</td>
+          <td width="100%">
+            <p>
+            This is a method with not return value.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#acf60e28c8fbc1c333bda47fa33e165e">Method</a>
+          </td>
+          <td nowrap="nowrap">/</td>
+          <td>GET</td>
+          <td width="100%">
+            <p>
+            This is a method.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#c26e72712f2e838c6c65c99e8836c466">MethodWithGenericReturn</a>
+          </td>
+          <td nowrap="nowrap">/yada</td>
+          <td>GET</td>
+          <td width="100%">
+            <p>
+            This is another method that returns a generic object.
+            </p>
+          </td>
+        </tr>
+      </table>
+      <h5>Remarks</h5>
+      <p>
+        <P>Ut ullamcorper euismod enim ut ullamcorper.</P> Morbi egestas magna eu elit ultrices eget accumsan nisi mattis. Pellentesque nec tempus justo. Curabitur ultricies vestibulum bibendum. In non magna sem, vel lacinia odio. Cras at sem urna. Nullam et nulla quis libero vestibulum viverra in id ipsum. Nunc et risus id lacus vulputate consectetur. Praesent fermentum dapibus augue vitae elementum. Nam lacinia varius ullamcorper. Praesent varius placerat luctus. Nullam lobortis, lectus vel sagittis blandit, erat magna accumsan enim, vitae ullamcorper eros dolor ut sapien.
+            <OL><LI><strong>: </strong></LI><LI><strong>: </strong></LI></OL></p>
+      <p>This is some info about a value.</p>
+      <h5>Example</h5>
+      <p>
+            Here is how you use this:
+            <PRE style="background-color:#DDDDDD;padding:5px">MethodWithNoResult(...)</PRE></p>
+      <h5>Faults</h5>
+      <ul>
+        <LI>Bad things are happening.</LI>
+      </ul>
+      <h5>See Also</h5>
+      <span style="padding-left: 20px">
+        <a href="#acf60e28c8fbc1c333bda47fa33e165e">Check this one out too.</a>
+      </span>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div>
+      <a id="a42fc1ed38065cf025906386f9c8f1b1">
+        <h4>IRESTfulServiceContractInterface\Method_With_No_Result_Or_Parameters</h4>
+      </a>
+      <h5>DELETE : /</h5>
+      <p>
+            This is a method with no parameters or return value.
+            </p>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="78dc08f121f5949ec9749eb669286a71">
+        <h4>IRESTfulServiceContractInterface\MethodWithNoResult</h4>
+      </a>
+      <h5>POST : /</h5>
+      <p>
+            This is a method with not return value.
+            </p>
+      <h5>Entity Body</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>parameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>listParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#8aaca691f11cb3878928c555b7e731fe">ArrayOfint</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>serializableParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Example</h5>
+      <p>
+            Here is how you use this:
+            <PRE style="background-color:#DDDDDD;padding:5px">MethodWithNoResult(...)</PRE></p>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="acf60e28c8fbc1c333bda47fa33e165e">
+        <h4>IRESTfulServiceContractInterface\Method</h4>
+      </a>
+      <h5>GET : /</h5>
+      <p>
+            This is a method.
+            </p>
+      <h5>Entity Body</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>parameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>listParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#8aaca691f11cb3878928c555b7e731fe">ArrayOfint</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+        <tr>
+          <td style="border-style: none">
+            <i>serializableParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Response</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+				Type: string</td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+        </tr>
+      </table>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="c26e72712f2e838c6c65c99e8836c466">
+        <h4>IRESTfulServiceContractInterface\MethodWithGenericReturn</h4>
+      </a>
+      <h5>GET : /yada</h5>
+      <p>
+            This is another method that returns a generic object.
+            </p>
+      <h5>Entity Body</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+            <i>pocoParameter</i>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none">
+			Type: <a href="#1d5339aa8bc42d946a611f7e049f6257">POCOType</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+          <td style="border-style: none" />
+        </tr>
+      </table>
+      <h5>Response</h5>
+      <table style="border-style: none">
+        <tr>
+          <td style="border-style: none">
+				Type: <a href="#147f25d07c5a5642fc8f20a22dcd888d">GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw</a></td>
+        </tr>
+        <tr>
+          <td style="border-style: none" />
+        </tr>
+      </table>
+    </div>
+    <br />
+    <hr />
+    <h3 class="SmallMargin">Types</h3>
+    <hr />
+    <div>
+      <a id="c61b4d57693a9a85da19ba0fb0ca3acc">
+        <h4>ArrayOfDataContractType Array</h4>
+      </a>
+      <h5>Array Element</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Element Name</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>DataContractType</td>
+          <td width="100%">
+            <a href="#2bbcac45da88d04faea033c81a3d0d51">DataContractType</a>
+          </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ArrayOfDataContractType&gt;
+    &lt;DataContractType&gt;...&lt;/DataContractType&gt;
+    &lt;DataContractType&gt;...&lt;/DataContractType&gt;
+    &lt;DataContractType&gt;...&lt;/DataContractType&gt;
+    ...
+&lt;/ArrayOfDataContractType&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="2bbcac45da88d04faea033c81a3d0d51">
+        <h4>DataContractType Type</h4>
+      </a>
+      <p>
+            This is a data contract type.
+            </p>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ArrayProperty</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsDataContractCustomNameEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#ead606f687db9760e3149ad4ee3464f1">Colors_Enumeration_Data_Contract_With_CustomNames</a>
+          </td>
+          <td width="100%">
+            This is a data contract enum property with a custom name.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsDataContractEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#c47aec471314eda2ec51a80a09fce2ce">ColorsEnumerationDataContract</a>
+          </td>
+          <td width="100%">
+            This is data contract enum property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#73e78a34e5d61d051c129db429cde281">ColorsEnumeration</a>
+          </td>
+          <td width="100%">
+            This is an enum property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">GenericProperty</td>
+          <td nowrap="nowrap">
+            <a href="#25bc6a9441381d239e23849dc3f8edb0">GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns</a>
+          </td>
+          <td width="100%">
+            This is a generic type property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ListProperty</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">POCOProperty</td>
+          <td nowrap="nowrap">
+            <a href="#1d5339aa8bc42d946a611f7e049f6257">POCOType</a>
+          </td>
+          <td width="100%">
+            This is a poco property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Property</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Property_With_A_Custom_Name</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">SerializableProperty</td>
+          <td nowrap="nowrap">
+            <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a>
+          </td>
+          <td width="100%">
+            This is a serializable property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">field</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">field_With_A_Custom_Name</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;DataContractType&gt;
+    &lt;ArrayProperty&gt;...&lt;/ArrayProperty&gt;
+    &lt;ColorsDataContractCustomNameEnumProperty&gt;...&lt;/ColorsDataContractCustomNameEnumProperty&gt;
+    &lt;ColorsDataContractEnumProperty&gt;...&lt;/ColorsDataContractEnumProperty&gt;
+    &lt;ColorsEnumProperty&gt;...&lt;/ColorsEnumProperty&gt;
+    &lt;GenericProperty&gt;...&lt;/GenericProperty&gt;
+    &lt;ListProperty&gt;...&lt;/ListProperty&gt;
+    &lt;POCOProperty&gt;...&lt;/POCOProperty&gt;
+    &lt;Property&gt;...&lt;/Property&gt;
+    &lt;Property_With_A_Custom_Name&gt;...&lt;/Property_With_A_Custom_Name&gt;
+    &lt;SerializableProperty&gt;...&lt;/SerializableProperty&gt;
+    &lt;field&gt;...&lt;/field&gt;
+    &lt;field_With_A_Custom_Name&gt;...&lt;/field_With_A_Custom_Name&gt;
+&lt;/DataContractType&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="147f25d07c5a5642fc8f20a22dcd888d">
+        <h4>GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw Type</h4>
+      </a>
+      <p>
+            This is a generic data contract.
+            </p>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyA</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyB</td>
+          <td nowrap="nowrap">int</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyC</td>
+          <td nowrap="nowrap">
+            <a href="#493ec6fbb0edabe4a9f506440ccdc272">ArrayOfdateTime</a>
+          </td>
+          <td width="100%" />
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw&gt;
+    &lt;PropertyA&gt;...&lt;/PropertyA&gt;
+    &lt;PropertyB&gt;...&lt;/PropertyB&gt;
+    &lt;PropertyC&gt;...&lt;/PropertyC&gt;
+&lt;/GenericDataContractTypeOfstringintArrayOfdateTime4u1BbtVw&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="25bc6a9441381d239e23849dc3f8edb0">
+        <h4>GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns Type</h4>
+      </a>
+      <p>
+            This is a generic data contract.
+            </p>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyA</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyB</td>
+          <td nowrap="nowrap">int</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">PropertyC</td>
+          <td nowrap="nowrap">
+            <a href="#2bbcac45da88d04faea033c81a3d0d51">DataContractType</a>
+          </td>
+          <td width="100%">
+            This is a nice property.
+            </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns&gt;
+    &lt;PropertyA&gt;...&lt;/PropertyA&gt;
+    &lt;PropertyB&gt;...&lt;/PropertyB&gt;
+    &lt;PropertyC&gt;...&lt;/PropertyC&gt;
+&lt;/GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="1d5339aa8bc42d946a611f7e049f6257">
+        <h4>POCOType Type</h4>
+      </a>
+      <p>
+            This is a nice POCO type.
+            </p>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ArrayProperty</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsDataContractCustomNameEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#ead606f687db9760e3149ad4ee3464f1">Colors_Enumeration_Data_Contract_With_CustomNames</a>
+          </td>
+          <td width="100%">
+            A nice property that returns an enum.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsDataContractEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#c47aec471314eda2ec51a80a09fce2ce">ColorsEnumerationDataContract</a>
+          </td>
+          <td width="100%">
+            A nice property that returns an enum.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ColorsEnumProperty</td>
+          <td nowrap="nowrap">
+            <a href="#73e78a34e5d61d051c129db429cde281">ColorsEnumeration</a>
+          </td>
+          <td width="100%">
+            A nice property that returns an enum.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">DataContractProperty</td>
+          <td nowrap="nowrap">
+            <a href="#2bbcac45da88d04faea033c81a3d0d51">DataContractType</a>
+          </td>
+          <td width="100%">
+            A nice property that returns a data contract.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">GenericProperty</td>
+          <td nowrap="nowrap">
+            <a href="#25bc6a9441381d239e23849dc3f8edb0">GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns</a>
+          </td>
+          <td width="100%">
+            This is a nice generic type property.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">ListProperty</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Property</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">SerializableProperty</td>
+          <td nowrap="nowrap">
+            <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a>
+          </td>
+          <td width="100%">
+            This is a nice property that returns a serializable type.
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">field</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;POCOType&gt;
+    &lt;ArrayProperty&gt;...&lt;/ArrayProperty&gt;
+    &lt;ColorsDataContractCustomNameEnumProperty&gt;...&lt;/ColorsDataContractCustomNameEnumProperty&gt;
+    &lt;ColorsDataContractEnumProperty&gt;...&lt;/ColorsDataContractEnumProperty&gt;
+    &lt;ColorsEnumProperty&gt;...&lt;/ColorsEnumProperty&gt;
+    &lt;DataContractProperty&gt;...&lt;/DataContractProperty&gt;
+    &lt;GenericProperty&gt;...&lt;/GenericProperty&gt;
+    &lt;ListProperty&gt;...&lt;/ListProperty&gt;
+    &lt;Property&gt;...&lt;/Property&gt;
+    &lt;SerializableProperty&gt;...&lt;/SerializableProperty&gt;
+    &lt;field&gt;...&lt;/field&gt;
+&lt;/POCOType&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="00d45a4c5db17e293f2e993a2b65c9fa">
+        <h4>SerializableType Type</h4>
+      </a>
+      <p>
+            This is a serializable type.
+            </p>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_arrayPropertyField</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_genericPropertyField</td>
+          <td nowrap="nowrap">
+            <a href="#25bc6a9441381d239e23849dc3f8edb0">GenericDataContractTypeOfstringintDataContractTypeWG2u_PLns</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_listPropertyField</td>
+          <td nowrap="nowrap">
+            <a href="#e731dd43ecd427564f4cf69c9ad823d6">ArrayOfstring</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_pocoPropertyField</td>
+          <td nowrap="nowrap">
+            <a href="#1d5339aa8bc42d946a611f7e049f6257">POCOType</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_propertyField</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">_serializablePropertyField</td>
+          <td nowrap="nowrap">
+            <a href="#00d45a4c5db17e293f2e993a2b65c9fa">SerializableType</a>
+          </td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">field</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;SerializableType&gt;
+    &lt;_arrayPropertyField&gt;...&lt;/_arrayPropertyField&gt;
+    &lt;_genericPropertyField&gt;...&lt;/_genericPropertyField&gt;
+    &lt;_listPropertyField&gt;...&lt;/_listPropertyField&gt;
+    &lt;_pocoPropertyField&gt;...&lt;/_pocoPropertyField&gt;
+    &lt;_propertyField&gt;...&lt;/_propertyField&gt;
+    &lt;_serializablePropertyField&gt;...&lt;/_serializablePropertyField&gt;
+    &lt;field&gt;...&lt;/field&gt;
+&lt;/SerializableType&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="ead606f687db9760e3149ad4ee3464f1">
+        <h4>Colors_Enumeration_Data_Contract_With_CustomNames Enumeration</h4>
+      </a>
+      <p>
+            A nice data contract enum with a custom name
+            </p>
+      <h5>Options</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">R_e_d</td>
+          <td width="100%">
+            Red buttons do bad things
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">G_r_e_e_n</td>
+          <td width="100%">
+            Green sea monsters are troubling
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Blue</td>
+          <td width="100%">
+            Blue dragons are even more troubling
+            </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;Colors_Enumeration_Data_Contract_With_CustomNames&gt;R_e_d&lt;/Colors_Enumeration_Data_Contract_With_CustomNames&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="73e78a34e5d61d051c129db429cde281">
+        <h4>ColorsEnumeration Enumeration</h4>
+      </a>
+      <p>
+            A nice plain old enum
+            </p>
+      <h5>Options</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Red</td>
+          <td width="100%">
+            Is Robert Redford red?
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Green</td>
+          <td width="100%">
+            Is Alan Greenspan green?
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Blue</td>
+          <td width="100%">
+            Are Blue Dog democrats blue? 
+            </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ColorsEnumeration&gt;Red&lt;/ColorsEnumeration&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="c47aec471314eda2ec51a80a09fce2ce">
+        <h4>ColorsEnumerationDataContract Enumeration</h4>
+      </a>
+      <p>
+            A nice data contract enum of colors.
+            </p>
+      <h5>Options</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Red</td>
+          <td width="100%">
+            Angry people turn red
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Green</td>
+          <td width="100%">
+            Its not easy being green
+            </td>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Blue</td>
+          <td width="100%">
+            Its not easy being blue either
+            </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ColorsEnumerationDataContract&gt;Red&lt;/ColorsEnumerationDataContract&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="493ec6fbb0edabe4a9f506440ccdc272">
+        <h4>ArrayOfdateTime Array</h4>
+      </a>
+      <h5>Array Element</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Element Name</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>dateTime</td>
+          <td width="100%">dateTime</td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ArrayOfdateTime&gt;
+    &lt;dateTime&gt;...&lt;/dateTime&gt;
+    &lt;dateTime&gt;...&lt;/dateTime&gt;
+    &lt;dateTime&gt;...&lt;/dateTime&gt;
+    ...
+&lt;/ArrayOfdateTime&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="8aaca691f11cb3878928c555b7e731fe">
+        <h4>ArrayOfint Array</h4>
+      </a>
+      <h5>Array Element</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Element Name</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td width="100%">int</td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ArrayOfint&gt;
+    &lt;int&gt;...&lt;/int&gt;
+    &lt;int&gt;...&lt;/int&gt;
+    &lt;int&gt;...&lt;/int&gt;
+    ...
+&lt;/ArrayOfint&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="e731dd43ecd427564f4cf69c9ad823d6">
+        <h4>ArrayOfstring Array</h4>
+      </a>
+      <h5>Array Element</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Element Name</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>string</td>
+          <td width="100%">string</td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ArrayOfstring&gt;
+    &lt;string&gt;...&lt;/string&gt;
+    &lt;string&gt;...&lt;/string&gt;
+    &lt;string&gt;...&lt;/string&gt;
+    ...
+&lt;/ArrayOfstring&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="b00a2ce0d5c1b5f006e8b136865a9705">
+        <h4>ArrayOfData_Contract_Type_With_Name_And_Namespace Array</h4>
+      </a>
+      <h5>Array Element</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Element Name</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>Data_Contract_Type_With_Name_And_Namespace</td>
+          <td width="100%">
+            <a href="#f95bd6f8ad0cb2359dc7c5135e1d2176">Data_Contract_Type_With_Name_And_Namespace</a>
+          </td>
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;ArrayOfData_Contract_Type_With_Name_And_Namespace&gt;
+    &lt;Data_Contract_Type_With_Name_And_Namespace&gt;...&lt;/Data_Contract_Type_With_Name_And_Namespace&gt;
+    &lt;Data_Contract_Type_With_Name_And_Namespace&gt;...&lt;/Data_Contract_Type_With_Name_And_Namespace&gt;
+    &lt;Data_Contract_Type_With_Name_And_Namespace&gt;...&lt;/Data_Contract_Type_With_Name_And_Namespace&gt;
+    ...
+&lt;/ArrayOfData_Contract_Type_With_Name_And_Namespace&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <a id="f95bd6f8ad0cb2359dc7c5135e1d2176">
+        <h4>Data_Contract_Type_With_Name_And_Namespace Type</h4>
+      </a>
+      <h5>Members</h5>
+      <table cellspacing="0" cellpadding="5" width="100%">
+        <tr>
+          <th nowrap="nowrap">Member Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td nowrap="nowrap">Property</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+        <tr>
+          <td nowrap="nowrap">field</td>
+          <td nowrap="nowrap">string</td>
+          <td width="100%" />
+        </tr>
+      </table>
+      <h5>RESTful Xml Representation</h5>
+      <PRE style="background-color:#DDDDDD;padding:5px">
+&lt;Data_Contract_Type_With_Name_And_Namespace&gt;
+    &lt;Property&gt;...&lt;/Property&gt;
+    &lt;field&gt;...&lt;/field&gt;
+&lt;/Data_Contract_Type_With_Name_And_Namespace&gt;	
+</PRE>
+    </div>
+    <br />
+    <hr />
+    <br />
+  </body>
+</html>
