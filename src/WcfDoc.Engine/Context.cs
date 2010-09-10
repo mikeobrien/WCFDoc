@@ -12,7 +12,7 @@ namespace WcfDoc.Engine
         // ────────────────────────── Constructor ──────────────────────────
 
         public Context(
-            string[] assemblies, 
+            IEnumerable<string> assemblies, 
             string output, 
             string stylesheet,  
             string[] mergeFiles,
@@ -41,11 +41,11 @@ namespace WcfDoc.Engine
 
         // ────────────────────────── Private Members ──────────────────────────
 
-        private IEnumerable<Assembly> LoadAssemblies(string[] paths)
+        private static IEnumerable<Assembly> LoadAssemblies(IEnumerable<string> paths)
         {
-            List<Assembly> assemblies = new List<Assembly>();
+            var assemblies = new List<Assembly>();
 
-            foreach (string path in paths)
+            foreach (var path in paths)
             {
                 try
                 {
@@ -59,26 +59,27 @@ namespace WcfDoc.Engine
             return assemblies;
         }
 
-        private IEnumerable<XDocument> LoadXmlFiles(string[] paths)
+        private static IEnumerable<XDocument> LoadXmlFiles(string[] paths)
         {
             if (paths == null || paths.Length < 1) return null;
-            List<string> files = new List<string>();
+            var files = new List<string>();
 
-            foreach (string path in paths)
+            foreach (var path in paths.Where(path => !string.IsNullOrEmpty(path)))
             {
-                if (!string.IsNullOrEmpty(path))
-                {
-                    if (!Directory.Exists(Path.GetDirectoryName(path)))
-                        throw new Exception(string.Format("Xml files folder '{0}' does not exist!", path));
+                var directoryName = Path.GetDirectoryName(path);
+                var filename = Path.GetFileName(path);
+                if (directoryName == null || !Directory.Exists(directoryName))
+                    throw new Exception(string.Format("Xml files folder '{0}' does not exist!", path));
 
-                    try
-                    {
-                        files.AddRange(Directory.GetFiles(Path.GetDirectoryName(path), Path.GetFileName(path)));
-                    }
-                    catch (Exception exception)
-                    {
-                        throw new Exception(string.Format("Error loading xml files '{0}': {1}", path, exception.Message));
-                    }
+                if (filename == null) continue;
+
+                try
+                {
+                    files.AddRange(Directory.GetFiles(directoryName, filename));
+                }
+                catch (Exception exception)
+                {
+                    throw new Exception(string.Format("Error loading xml files '{0}': {1}", path, exception.Message));
                 }
             }
 
@@ -88,21 +89,19 @@ namespace WcfDoc.Engine
             return new List<XDocument>(from path in files select LoadXmlFile(path));
         }
 
-        private XDocument LoadXmlFile(string path)
+        private static XDocument LoadXmlFile(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
             if (!File.Exists(path))
                 throw new Exception(string.Format("Xml file '{0}' does not exist!", path));
-            else
+
+            try
             {
-                try
-                {
-                    return XDocument.Load(path);
-                }
-                catch (Exception exception)
-                {
-                    throw new Exception(string.Format("Error loading xml file '{0}': {1}", path, exception.Message));
-                }
+                return XDocument.Load(path);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(string.Format("Error loading xml file '{0}': {1}", path, exception.Message));
             }
         }
     }

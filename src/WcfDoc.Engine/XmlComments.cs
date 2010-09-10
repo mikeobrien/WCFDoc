@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using System.IO;
@@ -14,7 +13,7 @@ namespace WcfDoc.Engine
     {
         // ────────────────────────── Private Fields ──────────────────────────
 
-        private XDocument _xmlComments;
+        private readonly XDocument _xmlComments;
 
         // ────────────────────────── Constructor ──────────────────────────
 
@@ -22,14 +21,14 @@ namespace WcfDoc.Engine
         {
             if (xmlComments == null) return;
             _xmlComments = new XDocument();
-            XElement members = new XElement("members");
+            var members = new XElement("members");
             _xmlComments.Add(new XElement("doc", members));
 
-            foreach (XDocument document in xmlComments)
+            foreach (var document in xmlComments)
             {
-                string assembly = document.XPathSelectElement("/doc/assembly/name").Value;
-                IEnumerable<XElement> elements = document.XPathSelectElements("/doc/members/member");
-                foreach (XElement element in elements)
+                var assembly = document.XPathSelectElement("/doc/assembly/name").Value;
+                var elements = document.XPathSelectElements("/doc/members/member");
+                foreach (var element in elements)
                 {
                     members.Add(new XElement("member", 
                         new XAttribute("assembly", assembly),
@@ -50,28 +49,25 @@ namespace WcfDoc.Engine
         public XElement GetMethodParameterComments(MethodInfo method, string name)
         {
             if (_xmlComments == null || method == null || string.IsNullOrEmpty(name)) return null;
-            IEnumerable<XElement> comments = GetAllMethodComments(method);
+            var comments = GetAllMethodComments(method);
             if (comments != null)
                 return comments.FirstOrDefault(
                 e => e.Name == "param" && e.Attribute("name").Value == name);
-            else return null;
+            return null;
         }
 
         public XElement GetMethodReturnTypeComments(MethodInfo method)
         {
             if (_xmlComments == null || method == null) return null;
-            IEnumerable<XElement> comments = GetAllMethodComments(method);
-            if (comments != null) return comments.FirstOrDefault(e => e.Name == "returns");
-            else return null;
+            var comments = GetAllMethodComments(method);
+            return comments != null ? comments.FirstOrDefault(e => e.Name == "returns") : null;
         }
 
         public IEnumerable<XElement> GetMethodComments(MethodInfo method)
         {
             if (_xmlComments == null || method == null) return null;
-            IEnumerable<XElement> comments = GetAllMethodComments(method);
-            if (comments != null) 
-                return comments.Where(e => e.Name != "param" && e.Name != "returns");
-            else return null;
+            var comments = GetAllMethodComments(method);
+            return comments != null ? comments.Where(e => e.Name != "param" && e.Name != "returns") : null;
         }
 
         public IEnumerable<XElement> GetAllMethodComments(MethodInfo method)
@@ -97,28 +93,27 @@ namespace WcfDoc.Engine
             if (_xmlComments == null || member == null) return null;
             if (member is FieldInfo)
                 return GetFieldComments((FieldInfo)member);
-            else if (member is PropertyInfo)
+            if (member is PropertyInfo)
                 return GetPropertyComments((PropertyInfo)member);
-            else
-                throw new ArgumentException("Must be of type FieldInfo or PropertyInfo.", "member");
+            throw new ArgumentException("Must be of type FieldInfo or PropertyInfo.", "member");
         }
 
-        public void ReplaceMemberReferences(Dictionary<string, XmlComments.XmlMemberInfo> memberMapping)
+        public void ReplaceMemberReferences(Dictionary<string, XmlMemberInfo> memberMapping)
         {
             if (_xmlComments == null || memberMapping == null) return;
-            IEnumerable<XElement> members = _xmlComments.XPathSelectElements("/doc/members/member");
-            foreach (XElement member in members)
+            var members = _xmlComments.XPathSelectElements("/doc/members/member");
+            foreach (var member in members)
             {
-                string[] elements = new string[] { "exception", "permission", "seealso", "see"};
-                foreach (string element in elements)
+                var elements = new [] { "exception", "permission", "seealso", "see"};
+                foreach (var element in elements)
                 {
-                    IEnumerable<XElement> memberReferences = member.XPathSelectElements("//" + element);
-                    foreach (XElement memberReference in memberReferences)
+                    var memberReferences = member.XPathSelectElements("//" + element);
+                    foreach (var memberReference in memberReferences)
                     {
                         if (memberReference.Attribute("cref") != null && 
                             !string.IsNullOrEmpty(memberReference.Attribute("cref").Value))
                         {
-                            KeyValuePair<string, XmlComments.XmlMemberInfo> match = memberMapping.FirstOrDefault(
+                            var match = memberMapping.FirstOrDefault(
                                 i => i.Value.Assembly == member.Attribute("assembly").Value && 
                                      i.Value.Name == memberReference.Attribute("cref").Value);
                             if (!string.IsNullOrEmpty(match.Key)) memberReference.Attribute("cref").Value = match.Key;
@@ -130,7 +125,7 @@ namespace WcfDoc.Engine
 
         public static XmlMemberInfo GetMemberInfo(Type type)
         {
-            return new XmlMemberInfo()
+            return new XmlMemberInfo
             {
                 Name = GetMemberName(type),
                 Assembly = GetAssemblyName(type)
@@ -139,7 +134,7 @@ namespace WcfDoc.Engine
 
         public static XmlMemberInfo GetMemberInfo(MemberInfo member)
         {
-            return new XmlMemberInfo()
+            return new XmlMemberInfo
             {
                 Name = GetMemberName(member),
                 Assembly = GetAssemblyName(member)
@@ -162,9 +157,9 @@ namespace WcfDoc.Engine
 
         private static string GetAssemblyName(MemberInfo member)
         {
-            Type type = null;
+            Type type;
             if (member is MethodInfo)
-                type = ((MethodInfo)member).DeclaringType;
+                type = member.DeclaringType;
             else if (member is PropertyInfo)
                 type = ((PropertyInfo)member).PropertyType;
             else if (member is FieldInfo)
@@ -184,8 +179,8 @@ namespace WcfDoc.Engine
         {
             if (member is MethodInfo)
             {
-                MethodInfo method = (MethodInfo)member;
-                ParameterInfo[] parameters = method.GetParameters();
+                var method = (MethodInfo)member;
+                var parameters = method.GetParameters();
                 string methodParameters;
                 if (parameters.Length > 0)
                     methodParameters =
@@ -199,7 +194,7 @@ namespace WcfDoc.Engine
                 else
                     methodParameters = string.Empty;
 
-                string methodSignature =
+                var methodSignature =
                     string.Format("{0}.{1}{2}",
                         method.DeclaringType.FullName,
                         method.Name,
@@ -207,27 +202,20 @@ namespace WcfDoc.Engine
 
                 return string.Format("M:{0}", methodSignature);
             }
-            else if (member is PropertyInfo)
-            {
-                PropertyInfo property = (PropertyInfo)member;
-                Type type;
-                if (property.DeclaringType.IsGenericType)
-                    type = property.DeclaringType.GetGenericTypeDefinition();
-                else type = property.DeclaringType;
 
+            if (member is PropertyInfo)
+            {
+                var property = (PropertyInfo)member;
+                var type = property.DeclaringType.IsGenericType ? property.DeclaringType.GetGenericTypeDefinition() : property.DeclaringType;
                 return string.Format("P:{0}.{1}", type.FullName, property.Name);
             }
-            else if (member is FieldInfo)
+            if (member is FieldInfo)
             {
-                FieldInfo field = (FieldInfo)member;
-                Type type;
-                if (field.DeclaringType.IsGenericType)
-                    type = field.DeclaringType.GetGenericTypeDefinition();
-                else type = field.DeclaringType;
-
+                var field = (FieldInfo)member;
+                var type = field.DeclaringType.IsGenericType ? field.DeclaringType.GetGenericTypeDefinition() : field.DeclaringType;
                 return string.Format("F:{0}.{1}", type.FullName, field.Name);
             }
-            else return string.Empty;
+            return string.Empty;
         }
 
         // ────────────────────────── Nested Types ──────────────────────────

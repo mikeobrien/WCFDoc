@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NAnt.Core;
 using NAnt.Core.Attributes;
 using WcfDoc.Engine;
@@ -42,13 +39,13 @@ namespace WcfDoc.NAnt
             {
                 new Generator(
                     new Context(
-                    Assemblies != null ? Assemblies.Split(new char[] {'|'}) : null, 
+                    Assemblies != null ? Assemblies.Split(new [] {'|'}) : null, 
                     Output, 
                     Stylesheet,  
-                    MergeFiles != null ? MergeFiles.Split(new char[] {'|'}) : null,
+                    MergeFiles != null ? MergeFiles.Split(new [] {'|'}) : null,
                     WebsitePath,
                     Config,
-                    XmlComments != null ? XmlComments.Split(new char[] {'|'}) : null
+                    XmlComments != null ? XmlComments.Split(new [] {'|'}) : null
                     )).Generate();
             }
             catch (Exception exception)

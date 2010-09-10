@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Reflection;
 
@@ -11,10 +10,10 @@ namespace WcfDoc.Engine.Extensions
     {
         public static Stream FindManifestResourceStream(this Assembly assembly, string name)
         {
-            string[] names = assembly.GetManifestResourceNames();
+            var names = assembly.GetManifestResourceNames();
             if (name != null && names.Length > 0)
             {
-                string resourceName = names.OrderByDescending(n => n.Length).
+                var resourceName = names.OrderByDescending(n => n.Length).
                     FirstOrDefault(n => n.EndsWith(name));
                 if (!string.IsNullOrEmpty(resourceName))
                     return assembly.GetManifestResourceStream(resourceName);
@@ -36,9 +35,9 @@ namespace WcfDoc.Engine.Extensions
 
         public static IEnumerable<Type> FindTypes(this IEnumerable<Assembly> assemblies, Predicate<Type> predicate)
         {
-            List<Type> types = new List<Type>();
+            var types = new List<Type>();
 
-            foreach (Assembly assembly in assemblies)
+            foreach (var assembly in assemblies)
             {
                 try
                 {
@@ -58,11 +57,11 @@ namespace WcfDoc.Engine.Extensions
 
         public static Type FindType(this IEnumerable<Assembly> assemblies, Predicate<Type> predicate)
         {
-            foreach (Assembly assembly in assemblies)
+            foreach (var assembly in assemblies)
             {
                 try
                 {
-                    Type type = assembly.GetTypes().Where(t => predicate(t)).FirstOrDefault();
+                    var type = assembly.GetTypes().Where(t => predicate(t)).FirstOrDefault();
                     if (type != null) return type;
                 }
                 catch (ReflectionTypeLoadException exception)

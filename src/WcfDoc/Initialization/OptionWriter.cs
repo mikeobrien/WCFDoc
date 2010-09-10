@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Reflection;
-using WcfDoc;
 
 namespace WcfDoc.Initialization
 {
     public class OptionWriter 
     {
-        private Type[] _optionGroups;
-        private int _totalWidth;
-        private bool _seperated;
+        private readonly Type[] _optionGroups;
+        private readonly int _totalWidth;
+        private readonly bool _seperated;
 
-        private const int MARGIN = 2;
+        private const int Margin = 2;
 
         public OptionWriter(Type[] optionGroups, int totalWidth, bool seperated)
         {
@@ -29,36 +27,36 @@ namespace WcfDoc.Initialization
 
         private string Render()
         {
-            StringBuilder output = new StringBuilder();
+            var output = new StringBuilder();
 
-            foreach (Type optionGroup in _optionGroups)
+            foreach (var optionGroup in _optionGroups)
             {
-                List<OptionAttribute> options = GetOptionAttributes(optionGroup);
-                int columnWidth = GetMaxNameColumnWidth(2, options);
-                int descriptionColumnWidth = _totalWidth - (MARGIN * 3) - columnWidth;
+                var options = GetOptionAttributes(optionGroup);
+                var columnWidth = GetMaxNameColumnWidth(2, options);
+                var descriptionColumnWidth = _totalWidth - (Margin * 3) - columnWidth;
 
-                OptionGroupAttribute optionGroupAttribute = GetOptionGroupAttribute(optionGroup);
+                var optionGroupAttribute = GetOptionGroupAttribute(optionGroup);
 
                 output.AppendFormat("{0} - {1}\n\n" , optionGroupAttribute.Name, optionGroupAttribute.Description);
 
-                foreach (OptionAttribute option in options)
+                foreach (var option in options)
                 {
-                    string[] flagColumnLines = GetLines(columnWidth, string.Format("/{0}", option.Name));
-                    string[] descriptionColumnLines = GetLines(descriptionColumnWidth, option.Description);
+                    var flagColumnLines = GetLines(columnWidth, string.Format("/{0}", option.Name));
+                    var descriptionColumnLines = GetLines(descriptionColumnWidth, option.Description);
 
-                    for (int index = 0; index < Math.Max(flagColumnLines.Length, descriptionColumnLines.Length); index++)
+                    for (var index = 0; index < Math.Max(flagColumnLines.Length, descriptionColumnLines.Length); index++)
                     {
                         if (index < flagColumnLines.Length)
-                            output.Append(new string(' ', MARGIN) + flagColumnLines[index]);
+                            output.Append(new string(' ', Margin) + flagColumnLines[index]);
                         else
-                            output.Append(new string(' ', columnWidth + MARGIN));
+                            output.Append(new string(' ', columnWidth + Margin));
 
-                        output.Append(new string(' ', MARGIN));
+                        output.Append(new string(' ', Margin));
 
-                        if (index < descriptionColumnLines.Length)
-                            output.AppendFormat("{0}\n" , descriptionColumnLines[index]);
-                        else
-                            output.AppendFormat("{0}\n" , new string(' ', descriptionColumnWidth));
+                        output.AppendFormat("{0}\n",
+                                            index < descriptionColumnLines.Length
+                                                ? descriptionColumnLines[index]
+                                                : new string(' ', descriptionColumnWidth));
                     }
                     if (_seperated) output.Append("\n");
                 }
@@ -67,16 +65,16 @@ namespace WcfDoc.Initialization
             return output.ToString();
         }
 
-        private string[] GetLines(int maxWidth, string text)
+        private static string[] GetLines(int maxWidth, string text)
         {
-            List<string> lines = new List<string>();
+            var lines = new List<string>();
 
             if (text != null)
             {
-                string[] words = text.GetWords(maxWidth);
-                string buffer = string.Empty;
+                var words = text.GetWords(maxWidth);
+                var buffer = string.Empty;
 
-                foreach (string word in words)
+                foreach (var word in words)
                 {
                     if (word.Length == maxWidth)
                         lines.Add(word);
@@ -90,10 +88,7 @@ namespace WcfDoc.Initialization
                     else
                     {
                         lines.Add(buffer.PadRight(maxWidth));
-                        if (word != "\n")
-                            buffer = word;
-                        else
-                            buffer = string.Empty;
+                        buffer = word != "\n" ? word : string.Empty;
                     }
                 }
                 lines.Add(buffer.PadRight(maxWidth));
@@ -102,42 +97,25 @@ namespace WcfDoc.Initialization
             return lines.ToArray();
         }
 
-        private int GetMaxNameColumnWidth(int offset, List<OptionAttribute> options)
+        private static int GetMaxNameColumnWidth(int offset, IEnumerable<OptionAttribute> options)
         {
-            int maxWidth = 0;
-
-            foreach (OptionAttribute option in options)
-            {
-                maxWidth = Math.Max(maxWidth, option.Name.Length + offset);
-            }
-
-            return Math.Max(maxWidth, 15);
+            return Math.Max(options.Max(o => o.Name.Length + offset), 15);
         }
 
         private static OptionGroupAttribute GetOptionGroupAttribute(Type optionGroup)
         {
-            object[] attributes = optionGroup.GetCustomAttributes(typeof(OptionGroupAttribute), true);
-            if (attributes == null || attributes.Length == 0) 
-                return null;
-            else
-                return (OptionGroupAttribute)attributes[0];
-
+            var attributes = optionGroup.GetCustomAttributes(typeof(OptionGroupAttribute), true);
+            if (attributes.Length == 0) return null;
+            return (OptionGroupAttribute)attributes[0];
         }
 
-        private static List<OptionAttribute> GetOptionAttributes(Type optionGroup)
+        private static IEnumerable<OptionAttribute> GetOptionAttributes(Type optionGroup)
         {
-            List<OptionAttribute> options = new List<OptionAttribute>();
+            var properties = optionGroup.GetProperties();
 
-            PropertyInfo[] properties = optionGroup.GetProperties();
-
-            foreach (PropertyInfo property in properties)
-            {
-                object[] attributes = property.GetCustomAttributes(typeof(OptionAttribute), true);
-                if (attributes == null || attributes.Length == 0) continue;
-                options.Add((OptionAttribute)attributes[0]);
-            }
-
-            return options;
+            return (from property in properties
+                    select property.GetCustomAttributes(typeof (OptionAttribute), true)
+                    into attributes where attributes.Length != 0 select (OptionAttribute) attributes[0]).ToList();
         }
     }
 }

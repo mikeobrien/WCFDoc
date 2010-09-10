@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Runtime.Serialization;
 using System.Reflection;
 using System.ServiceModel;
-using System.Collections;
 
 namespace WcfDoc.Engine.Extensions
 {
@@ -36,43 +33,36 @@ namespace WcfDoc.Engine.Extensions
 
         public static Type GetEnumerableType(this Type type)
         {
-            Type enumerableInterface = type.GetInterfaces().FirstOrDefault(
+            var enumerableInterface = type.GetInterfaces().FirstOrDefault(
                 t => t.IsGenericType && 
                     t.GetGenericTypeDefinition() == typeof(IEnumerable<>));
-            if (enumerableInterface != null)
-                return enumerableInterface.GetGenericArguments()[0];
-            else
-                return null;
+            return enumerableInterface != null ? enumerableInterface.GetGenericArguments()[0] : null;
         }
 
         public static bool ImplementsInterface(this Type type, Type interfaceType)
         {
-            return ImplementsInterface(type, new Type[] { interfaceType });
+            return ImplementsInterface(type, new [] { interfaceType });
         }
 
         public static bool ImplementsInterface(this Type type, IEnumerable<Type> interfaces)
         {
-            foreach (Type interfaceType in interfaces)
-                if (type.FindInterfaces((t, c) => t == c, interfaceType).Length > 0) return true;
-            return false;
+            return interfaces.Any(interfaceType => type.FindInterfaces((t, c) => t == (Type)c, interfaceType).Length > 0);
         }
 
         public static string GetServiceContractName(this Type type)
         {
             ServiceContractAttribute serviceContract = null;
-            if (type.TryGetAttribute<ServiceContractAttribute>(ref serviceContract) &&
+            if (type.TryGetAttribute(ref serviceContract) &&
                 !string.IsNullOrEmpty(serviceContract.Name)) return serviceContract.Name;
-            else
-                return type.Name;
+            return type.Name;
         }
 
         public static string GetServiceContractNamespace(this Type type)
         {
             ServiceContractAttribute serviceContract = null;
-            if (type.TryGetAttribute<ServiceContractAttribute>(ref serviceContract) &&
+            if (type.TryGetAttribute(ref serviceContract) &&
                 serviceContract.Namespace != null) return serviceContract.Namespace;
-            else
-                return "http://tempuri.org/";
+            return "http://tempuri.org/";
         }
 
         public static string GetDataContractName(this Type type)

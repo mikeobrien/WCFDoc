@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Reflection;
 using System.Runtime.Serialization;
-using System.ServiceModel;
 
 namespace WcfDoc.Engine.Extensions
 {
@@ -24,19 +21,17 @@ namespace WcfDoc.Engine.Extensions
         public static string GetDataMemberName(this MemberInfo member)
         {
             DataMemberAttribute dataMember = null;
-            if (member.TryGetAttribute<DataMemberAttribute>(ref dataMember) &&
+            if (member.TryGetAttribute(ref dataMember) &&
                 !string.IsNullOrEmpty(dataMember.Name)) return dataMember.Name;
-            else
-                return member.Name;
+            return member.Name;
         }
 
         public static string GetEnumMemberName(this MemberInfo member)
         {
             EnumMemberAttribute enumMember = null;
-            if (member.TryGetAttribute<EnumMemberAttribute>(ref enumMember) &&
+            if (member.TryGetAttribute(ref enumMember) &&
                 !string.IsNullOrEmpty(enumMember.Value)) return enumMember.Value;
-            else
-                return member.Name;
+            return member.Name;
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
+﻿using System.IO;
 using System.Xml.Xsl;
 using System.Xml;
 using System.Xml.Linq;
@@ -22,11 +18,11 @@ namespace WcfDoc.Engine.Extensions
 
         public static XDocument Transform(this XDocument document, XmlReader stylesheet)
         {
-            XslCompiledTransform xslTransformer = new XslCompiledTransform();
+            var xslTransformer = new XslCompiledTransform();
             xslTransformer.Load(stylesheet);
 
-            MemoryStream documentStream = new MemoryStream();
-            XmlTextWriter writer = new XmlTextWriter(new StreamWriter(documentStream));
+            var documentStream = new MemoryStream();
+            var writer = new XmlTextWriter(new StreamWriter(documentStream));
 
             xslTransformer.Transform(document.CreateReader(), null, writer);
 

@@ -1,20 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Reflection;
 using System.Xml.Linq;
-using System.ServiceModel;
-using System.Runtime.Serialization;
-using System.ServiceModel.Configuration;
-using System.IO;
-using System.Xml.XPath;
-using System.ServiceModel.Web;
-using System.Xml;
-using System.ServiceModel.Description;
-using System.Xml.Schema;
-using System.Collections;
-using System.Xml.Serialization;
 using WcfDoc.Engine.Extensions;
 
 namespace WcfDoc.Engine
@@ -23,7 +9,7 @@ namespace WcfDoc.Engine
     {
         // ────────────────────────── Private Fields ──────────────────────────
 
-        private Context _context;
+        private readonly Context _context;
 
         // ────────────────────────── Constructors ──────────────────────────
 
@@ -36,11 +22,11 @@ namespace WcfDoc.Engine
 
         public void Generate()
         {
-            XDocument document = new XDocument();
-            XElement root = new XElement("doc");
+            var document = new XDocument();
+            var root = new XElement("doc");
             document.Add(root);
 
-            Contracts contracts = new Contracts(_context.Assemblies, new XmlComments(_context.XmlComments));
+            var contracts = new Contracts(_context.Assemblies, new XmlComments(_context.XmlComments));
 
             root.Add(GenerateServiceTypes(contracts));
             root.Add(GenerateServiceContracts(contracts));
@@ -56,7 +42,7 @@ namespace WcfDoc.Engine
 
         // ────────────────────────── Private Members ──────────────────────────
 
-        private XElement GenerateServiceContracts(Contracts contracts)
+        private static XElement GenerateServiceContracts(Contracts contracts)
         {
             return new XElement("serviceContracts",
                 from serviceContract in contracts.Services 
@@ -135,7 +121,7 @@ namespace WcfDoc.Engine
             );
         }
 
-        private XElement GenerateServiceTypes(Contracts contracts)
+        private static XElement GenerateServiceTypes(Contracts contracts)
         {
             return new XElement("types",
                 from type in contracts.Types
@@ -174,19 +160,19 @@ namespace WcfDoc.Engine
 
         private static XElement GetServices(Context context, Contracts contracts)
         {
-            XElement servicesElement = new XElement("services");
+            var servicesElement = new XElement("services");
 
             XmlComments xmlComments = null;
             if (context.XmlComments != null) 
                 xmlComments = new XmlComments(context.XmlComments);
 
-            IEnumerable<Type> types = context.Assemblies.FindTypes(
+            var types = context.Assemblies.FindTypes(
                 t => (t.IsClass && (from contract in contracts.Services select contract.Type).Contains(t)) || 
                      t.ImplementsInterface(from contract in contracts.Services select contract.Type));
 
-            foreach (Type type in types)
+            foreach (var type in types)
             {
-                XElement serviceElement = new XElement("service",
+                var serviceElement = new XElement("service",
                     new XAttribute("id", type.AssemblyQualifiedName.Hash()),
                     new XAttribute("type", type.FullName),
                     new XAttribute("assembly", type.Assembly.FullName));
@@ -217,15 +203,15 @@ namespace WcfDoc.Engine
             return servicesElement;
         }
 
-        private XElement GetServiceModelConfiguration(Context context)
+        private static XElement GetServiceModelConfiguration(Context context)
         {
             if (context.Config == null) return null;
-            Configuration configuration = new Configuration(context.Config);
+            var configuration = new Configuration(context.Config);
             return new XElement("configuration", 
                 from element in configuration.Source.Root.Elements() select element);
         }
 
-        private XElement GetMetadata(Context context)
+        private static XElement GetMetadata(Context context)
         {
             if (context.MergeDocuments == null) return null;
             return new XElement("metadata", from document in context.MergeDocuments select document.Root);

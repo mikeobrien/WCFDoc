@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Collections;
@@ -12,7 +11,7 @@ namespace WcfDoc.Engine
     {
         // ────────────────────────── Private Fields ──────────────────────────
 
-        List<ServiceFile> _serviceFiles = new List<ServiceFile>();
+        readonly List<ServiceFile> _serviceFiles = new List<ServiceFile>();
 
         // ────────────────────────── Constructor ──────────────────────────
 
@@ -21,21 +20,21 @@ namespace WcfDoc.Engine
             if (string.IsNullOrEmpty(path)) return;
             try
             {
-                string[] files = Directory.GetFiles(path, "*.svc", SearchOption.AllDirectories);
-                Regex regex = new Regex(@"(?:\s*)(?<name>\w*)\s*[:|=]\s*(""((?<value>.*?)"")|(?<value>[\w]*))");
+                var files = Directory.GetFiles(path, "*.svc", SearchOption.AllDirectories);
+                var regex = new Regex(@"(?:\s*)(?<name>\w*)\s*[:|=]\s*(""((?<value>.*?)"")|(?<value>[\w]*))");
 
-                foreach (string file in files)
+                foreach (var file in files)
                 {
-                    MatchCollection matches = regex.Matches(File.ReadAllText(file));
-                    string relativePath = file.Substring(path.Length).Replace("\\", "/");
+                    var matches = regex.Matches(File.ReadAllText(file));
+                    var relativePath = file.Substring(path.Length).Replace("\\", "/");
                     if (!relativePath.StartsWith("/")) relativePath = "/" + relativePath;
 
-                    foreach (Match match in matches)
-                        if (match.Groups.Count >= 2 && match.Groups["name"].Value == "Service")
-                        {
-                            _serviceFiles.Add(new ServiceFile(relativePath, match.Groups["value"].Value));
-                            break;
-                        }
+                    foreach (var match in matches.Cast<Match>().Where(match => match.Groups.Count >= 2 && 
+                                                                               match.Groups["name"].Value == "Service"))
+                    {
+                        _serviceFiles.Add(new ServiceFile(relativePath, match.Groups["value"].Value));
+                        break;
+                    }
                 }
             }
             catch (Exception exception)
@@ -51,7 +50,7 @@ namespace WcfDoc.Engine
             return _serviceFiles.GetEnumerator();
         }
 
-        public IEnumerator<ServiceWebsite.ServiceFile> GetEnumerator()
+        public IEnumerator<ServiceFile> GetEnumerator()
         {
             return _serviceFiles.GetEnumerator();
         }

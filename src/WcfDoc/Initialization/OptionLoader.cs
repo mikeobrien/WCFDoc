@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Reflection;
-using WcfDoc;
 using System.Text.RegularExpressions;
 
 namespace WcfDoc.Initialization
@@ -12,10 +9,10 @@ namespace WcfDoc.Initialization
     {
         public static void Load(object optionGroup, string commandLine)
         {
-            Dictionary<string, string> parameters = GetParameters(commandLine);
-            Dictionary<string, PropertyInfo> options = GetOptionAttributes(optionGroup.GetType());
+            var parameters = GetParameters(commandLine);
+            var options = GetOptionAttributes(optionGroup.GetType());
 
-            foreach (KeyValuePair<string, PropertyInfo> option in options)
+            foreach (var option in options)
             {
                 if (parameters.ContainsKey(option.Key))
                     option.Value.SetValue(optionGroup, parameters[option.Key], null);
@@ -24,12 +21,11 @@ namespace WcfDoc.Initialization
 
         private static Dictionary<string, string> GetParameters(string commandLine)
         {
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
-            string commandLineRegEx = 
-                @"(?:\s*)(?<=[-|/])(?<name>\w*)\s*[:|=]\s*(""((?<value>.*?)"")|(?<value>[\w]*))";
-            Regex regex = new Regex(commandLineRegEx);
+            var parameters = new Dictionary<string, string>();
+            const string commandLineRegEx = @"(?:\s*)(?<=[-|/])(?<name>\w*)\s*[:|=]\s*(""((?<value>.*?)"")|(?<value>[\w]*))";
+            var regex = new Regex(commandLineRegEx);
 
-            MatchCollection matches = regex.Matches(commandLine);
+            var matches = regex.Matches(commandLine);
 
             foreach (Match match in matches)
                 if (match.Groups.Count >= 2 && 
@@ -42,14 +38,14 @@ namespace WcfDoc.Initialization
 
         private static Dictionary<string, PropertyInfo> GetOptionAttributes(Type optionGroup)
         {
-            Dictionary<string, PropertyInfo> options = new Dictionary<string, PropertyInfo>();
+            var options = new Dictionary<string, PropertyInfo>();
 
-            PropertyInfo[] properties = optionGroup.GetProperties();
+            var properties = optionGroup.GetProperties();
 
-            foreach (PropertyInfo property in properties)
+            foreach (var property in properties)
             {
-                object[] attributes = property.GetCustomAttributes(typeof(OptionAttribute), true);
-                if (attributes == null || attributes.Length == 0) continue;
+                var attributes = property.GetCustomAttributes(typeof(OptionAttribute), true);
+                if (attributes.Length == 0) continue;
                 options.Add(((OptionAttribute)attributes[0]).Name, property);
             }
 

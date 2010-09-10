@@ -77,6 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Contract\ContractMember.cs" />
+    <Compile Include="Contract\ContractOperation.cs" />
+    <Compile Include="Contract\ContractOption.cs" />
+    <Compile Include="Contract\ContractParameter.cs" />
+    <Compile Include="Contract\ContractReturnType.cs" />
+    <Compile Include="Contract\ContractService.cs" />
+    <Compile Include="Contract\ContractType.cs" />
     <Compile Include="DataContractTypeInfo.cs" />
     <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Context.cs" />
@@ -87,6 +94,13 @@
     <Compile Include="Generator.cs" />
     <Compile Include="Extensions\MemberInfoExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Metadata\MemberMetadata.cs" />
+    <Compile Include="Metadata\OperationMetadata.cs" />
+    <Compile Include="Metadata\OptionMetadata.cs" />
+    <Compile Include="Metadata\ParameterMetadata.cs" />
+    <Compile Include="Metadata\ReturnTypeMetadata.cs" />
+    <Compile Include="Metadata\ServiceMetadata.cs" />
+    <Compile Include="Metadata\TypeMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Contracts.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />

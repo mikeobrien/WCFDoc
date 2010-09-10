@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace WcfDoc.Engine.Extensions
@@ -10,24 +7,17 @@ namespace WcfDoc.Engine.Extensions
     {
         public static IEnumerable<XElement> GetChildren(this XElement element)
         {
-            if (element != null)
-                return element.Elements();
-            else
-                return null;
+            return element != null ? element.Elements() : null;
         }
 
         public static string GetValueOrEmpty(this XElement element)
         {
-            if (element != null)
-                return element.Value ?? string.Empty;
-            else return string.Empty;
+            return element != null ? element.Value : string.Empty;
         }
 
         public static string GetAttributeOrEmpty(this XElement element, string attribute)
         {
-            if (element != null)
-                return element.Attribute(attribute).GetValueOrEmpty();
-            else return string.Empty;
+            return element != null ? element.Attribute(attribute).GetValueOrEmpty() : string.Empty;
         }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WcfDoc.Initialization
 {
@@ -11,7 +8,7 @@ namespace WcfDoc.Initialization
 
         public static void Display(params Type[] optionGroups)
         {
-            OptionWriter writer = new WcfDoc.Initialization.OptionWriter(optionGroups, Console.WindowWidth, true);
+            var writer = new OptionWriter(optionGroups, Console.WindowWidth, true);
             Console.Write(writer.ToString());
         }
 
