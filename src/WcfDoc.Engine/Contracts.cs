@@ -9,26 +9,42 @@ using WcfDoc.Engine.Contract;
 
 namespace WcfDoc.Engine
 {
+    public enum ServiceType
+    {
+        All,
+        Soap,
+        Rest
+    }
+
     public class Contracts
     {
         // ────────────────────────── Constructor ──────────────────────────
 
-        public Contracts(IEnumerable<Assembly> assemblies, XmlComments xmlComments)
+        public Contracts(IEnumerable<Assembly> assemblies, XmlComments xmlComments, ServiceType serviceType)
         {
-            Types = new List<ContractType>();
-            Services = new List<ContractService>();
+            var types = new List<ContractType>();
+            var services = new List<ContractService>();
 
-            LoadMetadata(assemblies, Types, Services);
-            LoadTypes(assemblies, Types, Services);
-            LoadServices(assemblies, Services);
+            LoadMetadata(assemblies, types, services);
+            LoadTypes(assemblies, types, services);
+            LoadServices(assemblies, services);
             
-            LoadXmlComments(xmlComments, Types, Services);
+            LoadXmlComments(xmlComments, types, services);
+
+            Types = types;
+
+            switch (serviceType)
+            {
+                case ServiceType.All: Services = services; break;
+                case ServiceType.Soap: Services = services.Where(x => !x.Restful).ToList(); break;
+                case ServiceType.Rest: Services = services.Where(x => x.Restful).ToList(); break;
+            }
         }
 
         // ────────────────────────── Public Members ──────────────────────────
 
-        public List<ContractType> Types { get; private set; }
-        public List<ContractService> Services { get; private set; }
+        public IList<ContractType> Types { get; private set; }
+        public IList<ContractService> Services { get; private set; }
 
         // ────────────────────────── Private Members ──────────────────────────
 

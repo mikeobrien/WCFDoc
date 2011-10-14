@@ -40,7 +40,7 @@ namespace WcfDoc
                         options.WebsitePath,
                         options.Config,
                         options.XmlComments != null ? options.XmlComments.Split(new [] {'|'}) : null
-                        )).Generate();
+                        )).Generate(options.ServiceType);
 
                     stopwatch.Stop();
 

@@ -20,13 +20,13 @@ namespace WcfDoc.Engine
 
         // ────────────────────────── Public Methods ──────────────────────────
 
-        public void Generate()
+        public void Generate(ServiceType serviceType)
         {
             var document = new XDocument();
             var root = new XElement("doc");
             document.Add(root);
 
-            var contracts = new Contracts(_context.Assemblies, new XmlComments(_context.XmlComments));
+            var contracts = new Contracts(_context.Assemblies, new XmlComments(_context.XmlComments), serviceType);
 
             root.Add(GenerateServiceTypes(contracts));
             root.Add(GenerateServiceContracts(contracts));

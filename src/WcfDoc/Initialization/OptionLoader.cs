@@ -15,7 +15,13 @@ namespace WcfDoc.Initialization
             foreach (var option in options)
             {
                 if (parameters.ContainsKey(option.Key))
-                    option.Value.SetValue(optionGroup, parameters[option.Key], null);
+                {
+                    object value;
+                    if (option.Value.PropertyType.IsEnum) value = Enum.Parse(option.Value.PropertyType, parameters[option.Key]);
+                    else value = parameters[option.Key];
+                    option.Value.SetValue(optionGroup, value, null);
+                }
+                    
             }
         }
 

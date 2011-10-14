@@ -30,6 +30,9 @@ namespace WcfDoc.NAnt
 
         [TaskAttribute("xmlComments", Required = false)]
         public string XmlComments { get; set; }
+
+        [TaskAttribute("serviceType", Required = false)]
+        public string ServiceType { get; set; }
         
         // ────────────────────────── Overriden Members ──────────────────────────
 
@@ -46,7 +49,7 @@ namespace WcfDoc.NAnt
                     WebsitePath,
                     Config,
                     XmlComments != null ? XmlComments.Split(new [] {'|'}) : null
-                    )).Generate();
+                    )).Generate((ServiceType)Enum.Parse(typeof(ServiceType), ServiceType));
             }
             catch (Exception exception)
             {

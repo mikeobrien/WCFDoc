@@ -19,6 +19,7 @@ namespace WcfDoc.MSBuild
         public string WebsitePath { get; set; }
         public string Config { get; set; }
         public string XmlComments { get; set; }
+        public string ServiceType { get; set; }
 
         // ────────────────────────── Overrided Members ──────────────────────────
 
@@ -35,7 +36,7 @@ namespace WcfDoc.MSBuild
                     WebsitePath,
                     Config,
                     XmlComments != null ? XmlComments.Split(new[] {'|'}) : null
-                    )).Generate();
+                    )).Generate((ServiceType)Enum.Parse(typeof(ServiceType), ServiceType));
                 return true;
             } catch (Exception exception)
             {

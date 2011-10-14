@@ -1,4 +1,5 @@
-﻿using WcfDoc.Initialization;
+﻿using WcfDoc.Engine;
+using WcfDoc.Initialization;
 
 namespace WcfDoc
 {
@@ -25,5 +26,8 @@ namespace WcfDoc
 
         [Option("MergeFiles", "Optional: Pipe seperated paths to xml files to be merged with the xml documentation prior to transformation. These can be explict or wildcard paths (IE: [Path]\\*.xml).")]
         public string MergeFiles { get; set; }
+
+        [Option("ServiceType", "Optional: The type of service to query [All, Soap, Rest].")]
+        public ServiceType ServiceType { get; set; }
     }
 }
