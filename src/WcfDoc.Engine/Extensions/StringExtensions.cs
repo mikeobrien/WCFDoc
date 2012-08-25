@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace WcfDoc.Engine.Extensions
 {
@@ -28,6 +29,11 @@ namespace WcfDoc.Engine.Extensions
         public static string ValueOrEmpty(this string value)
         {
             return value ?? string.Empty;
+        }
+
+        public static string StripUrlParameters(this string url)
+        {
+            return Regex.Replace(url, "/*\\{.*?\\}", "").Trim('/');
         }
     }
 }

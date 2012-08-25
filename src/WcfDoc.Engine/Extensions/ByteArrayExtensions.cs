@@ -6,7 +6,7 @@ namespace WcfDoc.Engine.Extensions
     {
         public static string ToHex(this byte[] bytes)
         {
-          return bytes.Select(b => b.ToString("{0:x2}")).Aggregate((a, i) => a + i);
+          return bytes.Select(b => string.Format("{0:X2}", b)).Aggregate((a, i) => a + i);
         }
     }
 }

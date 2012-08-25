@@ -75,8 +75,10 @@ namespace WcfDoc.Engine
                             new XAttribute("protectionLevel", operation.Properties.ProtectionLevel.ToString()),
                             new XAttribute("replyAction", operation.Properties.ReplyAction.ValueOrEmpty()),
                             new XAttribute("restful", (operation.RestfulProperties != null)),
-                            new XAttribute("restMethod", operation.RestfulProperties != null ? 
+                            new XAttribute("restMethod", operation.RestfulProperties != null ?
                                     operation.RestfulProperties.Method : string.Empty),
+                            new XAttribute("restResource", operation.RestfulProperties != null ?
+                                    operation.RestfulProperties.UriTemplate.StripUrlParameters() : string.Empty),
                             new XAttribute("restUriTemplate", operation.RestfulProperties != null ? 
                                     operation.RestfulProperties.UriTemplate ?? string.Empty : string.Empty),
                             new XAttribute("restBodyStyle", operation.RestfulProperties != null ? 

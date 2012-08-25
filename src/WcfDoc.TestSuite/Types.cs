@@ -215,6 +215,12 @@ namespace WcfDoc.TestSuite.ServiceContracts
         [WebGet(UriTemplate = "/widgets")]
         void MethodWithNoResultOrParameters();
         /// <summary>
+        /// This is a restful method with no parameters or return value.
+        /// </summary>
+        [OperationContract(Name = "Method_With_One_Result")]
+        [WebGet(UriTemplate = "/widgets/{Id}")]
+        void MethodWithOneResult();
+        /// <summary>
         /// This is a restful method with not return value.
         /// </summary>
         /// <param name="parameter">This is a parameter.</param>
@@ -225,7 +231,7 @@ namespace WcfDoc.TestSuite.ServiceContracts
         /// <code>MethodWithNoResult(...)</code>
         /// </example>
         [OperationContract]
-        [WebInvoke(UriTemplate="/widgets", Method="PUT")]
+        [WebInvoke(UriTemplate="/widgets/{Id}", Method="PUT")]
         void MethodWithNoResult(string parameter, List<int> listParameter, TypesC.SerializableType serializableParameter);
         /// <summary>
         /// This is a restful method.
@@ -243,7 +249,7 @@ namespace WcfDoc.TestSuite.ServiceContracts
         /// <param name="pocoParameter">This is a POCO parameter.</param>
         /// <returns>A generic type.</returns>
         [OperationContract]
-        [WebInvoke(UriTemplate="/widgets", Method="DELETE")]
+        [WebInvoke(UriTemplate="/widgets/{Id}", Method="DELETE")]
         TypesA.DataContractTypeWithNameAndNamespace[] MethodWithGenericReturn(TypesC.POCOType pocoParameter);
     }
 }
