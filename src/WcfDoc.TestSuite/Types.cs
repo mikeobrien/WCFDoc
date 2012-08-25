@@ -231,7 +231,7 @@ namespace WcfDoc.TestSuite.ServiceContracts
         /// <code>MethodWithNoResult(...)</code>
         /// </example>
         [OperationContract]
-        [WebInvoke(UriTemplate="/widgets/{Id}", Method="PUT")]
+        [WebInvoke(UriTemplate="/widgets/{Id}?sort={Sort}", Method="PUT")]
         void MethodWithNoResult(string parameter, List<int> listParameter, TypesC.SerializableType serializableParameter);
         /// <summary>
         /// This is a restful method.

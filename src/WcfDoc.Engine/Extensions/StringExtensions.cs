@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Linq;
+using System.Text;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
@@ -33,7 +34,7 @@ namespace WcfDoc.Engine.Extensions
 
         public static string StripUrlParameters(this string url)
         {
-            return Regex.Replace(url, "/*\\{.*?\\}", "").Trim('/');
+            return Regex.Replace(url, "/*\\{.*?\\}", "").Split('?').First().Trim('/');
         }
     }
 }
