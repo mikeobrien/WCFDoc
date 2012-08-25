@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using WcfDoc.Engine.Extensions;
@@ -35,7 +36,7 @@ namespace WcfDoc.Engine
             root.Add(GetMetadata(_context));
 
             if (_context.Stylesheet != null)
-                document.Transform(_context.Stylesheet).Save(_context.OutputPath);
+                File.WriteAllText(_context.OutputPath, document.Transform(_context.Stylesheet));
             else 
                 document.Save(_context.OutputPath);
         }

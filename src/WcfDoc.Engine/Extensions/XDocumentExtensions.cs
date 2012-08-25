@@ -7,16 +7,16 @@ namespace WcfDoc.Engine.Extensions
 {
     public static class XDocumentExtensions
     {
-        public static XDocument Transform(this XDocument document, Stream stylesheet)
+        public static string Transform(this XDocument document, Stream stylesheet)
         {
             return Transform(document, new XmlTextReader(stylesheet));
         }
-        public static XDocument Transform(this XDocument document, XDocument stylesheet)
+        public static string Transform(this XDocument document, XDocument stylesheet)
         {
             return Transform(document, stylesheet.CreateReader());
         }
 
-        public static XDocument Transform(this XDocument document, XmlReader stylesheet)
+        public static string Transform(this XDocument document, XmlReader stylesheet)
         {
             var xslTransformer = new XslCompiledTransform();
             xslTransformer.Load(stylesheet);
@@ -27,7 +27,7 @@ namespace WcfDoc.Engine.Extensions
             xslTransformer.Transform(document.CreateReader(), null, writer);
 
             documentStream.Position = 0;
-            return XDocument.Load(new XmlTextReader(documentStream));
+            return new StreamReader(documentStream).ReadToEnd();
         }
     }
 }

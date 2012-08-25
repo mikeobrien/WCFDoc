@@ -112,8 +112,8 @@ namespace WcfDoc.Engine
         {
             var wsdl = Wsdl.Generate(contract);
 
-            return new ContractMetadata(wsdl.Source.Transform(
-                Assembly.GetExecutingAssembly().FindManifestResourceStream("ContractMetadata.xslt")));
+            return new ContractMetadata(XDocument.Parse(wsdl.Source.Transform(
+                Assembly.GetExecutingAssembly().FindManifestResourceStream("ContractMetadata.xslt"))));
         }
     }
 }
